@@ -1,0 +1,2 @@
+dentro da pasta src execute o seguinte comando para criar a migration inicial do banco de dados:
+dotnet ef --startup-project MShop.API.Customer/ migrations add inicial --project Mshop.infra.Data

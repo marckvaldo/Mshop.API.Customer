@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="MediatR" Version="12.1.1" />
+    <ProjectReference Include="..\Mshop.Core\Mshop.Core.csproj" />
+    <ProjectReference Include="..\MShop.Domain\MShop.Domain.csproj" />
+    <ProjectReference Include="..\MShop.Infra.Data\MShop.Infra.Data.csproj" />
+    <ProjectReference Include="..\MShop.Infra.keycloak\MShop.Infra.Keycloak.csproj" />
+  </ItemGroup>
+
+</Project>

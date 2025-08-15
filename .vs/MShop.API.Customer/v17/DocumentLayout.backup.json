@@ -1,0 +1,662 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\commands\\handlers\\deleteaddresscustomercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\commands\\handlers\\deleteaddresscustomercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.data\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|solutionrelative:src\\mshop.infra.data\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.data\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|solutionrelative:src\\mshop.infra.data\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\commands\\handlers\\addaddresscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\commands\\handlers\\addaddresscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\dtos\\createcustomerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\dtos\\createcustomerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\commands\\addaddresscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\commands\\addaddresscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\commands\\handlers\\createcustomercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\commands\\handlers\\createcustomercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\commands\\createcustomercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\commands\\createcustomercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4CDD4EA-E190-3B19-D859-CB57D9F99B31}|src\\MShop.API.Customer\\MShop.API.Customer.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.api.customer\\controllers\\v1\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4CDD4EA-E190-3B19-D859-CB57D9F99B31}|src\\MShop.API.Customer\\MShop.API.Customer.csproj|solutionrelative:src\\mshop.api.customer\\controllers\\v1\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.data\\context\\mshopdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|solutionrelative:src\\mshop.infra.data\\context\\mshopdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.data\\mapping\\customermapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|solutionrelative:src\\mshop.infra.data\\mapping\\customermapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.data\\mapping\\addressmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|solutionrelative:src\\mshop.infra.data\\mapping\\addressmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.data\\seviceregistrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|solutionrelative:src\\mshop.infra.data\\seviceregistrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE3CC2C7-85CA-4B50-BB83-CC8B799884E0}|src\\MShop.Domain\\MShop.Domain.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.domain\\validation\\customervalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE3CC2C7-85CA-4B50-BB83-CC8B799884E0}|src\\MShop.Domain\\MShop.Domain.csproj|solutionrelative:src\\mshop.domain\\validation\\customervalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE3CC2C7-85CA-4B50-BB83-CC8B799884E0}|src\\MShop.Domain\\MShop.Domain.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.domain\\validation\\addressvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE3CC2C7-85CA-4B50-BB83-CC8B799884E0}|src\\MShop.Domain\\MShop.Domain.csproj|solutionrelative:src\\mshop.domain\\validation\\addressvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.data\\helpers\\cryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|solutionrelative:src\\mshop.infra.data\\helpers\\cryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\event\\domaineventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\event\\domaineventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\event\\createdcustomereventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\event\\createdcustomereventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C5FEE94-A150-9ABF-2447-13FD6BF85480}|src\\Mshop.Core\\Mshop.Core.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.core\\message\\domainevent\\idomaineventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C5FEE94-A150-9ABF-2447-13FD6BF85480}|src\\Mshop.Core\\Mshop.Core.csproj|solutionrelative:src\\mshop.core\\message\\domainevent\\idomaineventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4CDD4EA-E190-3B19-D859-CB57D9F99B31}|src\\MShop.API.Customer\\MShop.API.Customer.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.api.customer\\controllers\\v1\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4CDD4EA-E190-3B19-D859-CB57D9F99B31}|src\\MShop.API.Customer\\MShop.API.Customer.csproj|solutionrelative:src\\mshop.api.customer\\controllers\\v1\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\queries\\handlers\\getcustomerbyemailqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\queries\\handlers\\getcustomerbyemailqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\queries\\handlers\\getcustomerbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\queries\\handlers\\getcustomerbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\queries\\handlers\\getcustomerbynamequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\queries\\handlers\\getcustomerbynamequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1BF9F6E-DC99-4E54-9C90-B0078C4CFAF5}|tests\\MShop.Unit.Test\\MShop.Unit.Test.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\tests\\mshop.unit.test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1BF9F6E-DC99-4E54-9C90-B0078C4CFAF5}|tests\\MShop.Unit.Test\\MShop.Unit.Test.csproj|solutionrelative:tests\\mshop.unit.test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72221E11-0230-4BEE-B76E-16D7DBAC01DE}|tests\\MShop.Core.Test\\MShop.Core.Test.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\tests\\mshop.core.test\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72221E11-0230-4BEE-B76E-16D7DBAC01DE}|tests\\MShop.Core.Test\\MShop.Core.Test.csproj|solutionrelative:tests\\mshop.core.test\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\queries\\getcustomerbyemailquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\queries\\getcustomerbyemailquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3250DA5E-3A77-4CCB-82BD-2860725973D7}|src\\MShop.Infra.keycloak\\MShop.Infra.Keycloak.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.keycloak\\serviceresgistrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3250DA5E-3A77-4CCB-82BD-2860725973D7}|src\\MShop.Infra.keycloak\\MShop.Infra.Keycloak.csproj|solutionrelative:src\\mshop.infra.keycloak\\serviceresgistrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4CDD4EA-E190-3B19-D859-CB57D9F99B31}|src\\MShop.API.Customer\\MShop.API.Customer.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.api.customer\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E4CDD4EA-E190-3B19-D859-CB57D9F99B31}|src\\MShop.API.Customer\\MShop.API.Customer.csproj|solutionrelative:src\\mshop.api.customer\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.data\\interface\\icryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|solutionrelative:src\\mshop.infra.data\\interface\\icryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.infra.data\\mshop.infra.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DF6E3C7F-F3FF-4C36-A82A-3CE9F1677716}|src\\MShop.Infra.Data\\MShop.Infra.Data.csproj|solutionrelative:src\\mshop.infra.data\\mshop.infra.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83254C0D-5237-44EC-B970-12C2D6EE7CC4}|NewFolder1{83254C0D-5237-44EC-B970-12C2D6EE7CC4}|C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\documentacao\\Documentacao.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{83254C0D-5237-44EC-B970-12C2D6EE7CC4}|NewFolder1{83254C0D-5237-44EC-B970-12C2D6EE7CC4}|solutionrelative:documentacao\\Documentacao.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\serviceresgistrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\serviceresgistrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\queries\\getcustomerbynamequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\queries\\getcustomerbynamequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|c:\\users\\iq sistemas\\documents\\mshopping\\new\\mshopping\\mshop.api.customer\\src\\mshop.application\\dtos\\customerresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6169CD6-8F95-4A79-8EEF-0C92118D0BAC}|src\\MShop.Application\\MShop.Application.csproj|solutionrelative:src\\mshop.application\\dtos\\customerresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 14,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{50170fd7-46b4-3c72-bca6-b7a2bc08534e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{7ad0d46f-df4a-3d4b-9f9b-8322f9c21927}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Repository\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.Data\\Repository\\CustomerRepository.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Repository\\CustomerRepository.cs",
+              "RelativeToolTip": "src\\MShop.Infra.Data\\Repository\\CustomerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T19:40:48.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AddressMapping.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Mapping\\AddressMapping.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.Data\\Mapping\\AddressMapping.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Mapping\\AddressMapping.cs",
+              "RelativeToolTip": "src\\MShop.Infra.Data\\Mapping\\AddressMapping.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T19:04:38.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddAddressCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\Handlers\\AddAddressCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Commands\\Handlers\\AddAddressCommandHandler.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\Handlers\\AddAddressCommandHandler.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Commands\\Handlers\\AddAddressCommandHandler.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAIAwwCUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T18:30:19.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateCustomerCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\Handlers\\CreateCustomerCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Commands\\Handlers\\CreateCustomerCommandHandler.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\Handlers\\CreateCustomerCommandHandler.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Commands\\Handlers\\CreateCustomerCommandHandler.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAIAwwDgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T19:06:38.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\UnitOfWork\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.Data\\UnitOfWork\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\UnitOfWork\\UnitOfWork.cs",
+              "RelativeToolTip": "src\\MShop.Infra.Data\\UnitOfWork\\UnitOfWork.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAiwCIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T18:53:15.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeleteAddressCustomerCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\Handlers\\DeleteAddressCustomerCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Commands\\Handlers\\DeleteAddressCustomerCommandHandler.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\Handlers\\DeleteAddressCustomerCommandHandler.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Commands\\Handlers\\DeleteAddressCustomerCommandHandler.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T19:06:19.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MshopDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Context\\MshopDbContext.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.Data\\Context\\MshopDbContext.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Context\\MshopDbContext.cs",
+              "RelativeToolTip": "src\\MShop.Infra.Data\\Context\\MshopDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAgwBsAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T14:07:10.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddAddressCommand.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\AddAddressCommand.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Commands\\AddAddressCommand.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\AddAddressCommand.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Commands\\AddAddressCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T19:30:21.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateCustomerCommand.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\CreateCustomerCommand.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Commands\\CreateCustomerCommand.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Commands\\CreateCustomerCommand.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Commands\\CreateCustomerCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T19:30:53.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateCustomerDto.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Dtos\\CreateCustomerDto.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Dtos\\CreateCustomerDto.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Dtos\\CreateCustomerDto.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Dtos\\CreateCustomerDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T19:32:29.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CustomerValidation.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Domain\\Validation\\CustomerValidation.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Domain\\Validation\\CustomerValidation.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Domain\\Validation\\CustomerValidation.cs",
+              "RelativeToolTip": "src\\MShop.Domain\\Validation\\CustomerValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T19:03:45.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AddressValidation.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Domain\\Validation\\AddressValidation.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Domain\\Validation\\AddressValidation.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Domain\\Validation\\AddressValidation.cs",
+              "RelativeToolTip": "src\\MShop.Domain\\Validation\\AddressValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T19:03:43.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CustomerMapping.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Mapping\\CustomerMapping.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.Data\\Mapping\\CustomerMapping.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Mapping\\CustomerMapping.cs",
+              "RelativeToolTip": "src\\MShop.Infra.Data\\Mapping\\CustomerMapping.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T15:32:15.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddressController.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.API.Customer\\Controllers\\v1\\AddressController.cs",
+              "RelativeDocumentMoniker": "src\\MShop.API.Customer\\Controllers\\v1\\AddressController.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.API.Customer\\Controllers\\v1\\AddressController.cs",
+              "RelativeToolTip": "src\\MShop.API.Customer\\Controllers\\v1\\AddressController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwBYAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T18:33:16.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SeviceRegistrationExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\SeviceRegistrationExtensions.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.Data\\SeviceRegistrationExtensions.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\SeviceRegistrationExtensions.cs",
+              "RelativeToolTip": "src\\MShop.Infra.Data\\SeviceRegistrationExtensions.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAIAwwCQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T14:31:34.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CreatedCustomerEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Event\\CreatedCustomerEventHandler.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Event\\CreatedCustomerEventHandler.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Event\\CreatedCustomerEventHandler.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Event\\CreatedCustomerEventHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T19:32:27.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DomainEventPublisher.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Event\\DomainEventPublisher.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Event\\DomainEventPublisher.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Event\\DomainEventPublisher.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Event\\DomainEventPublisher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T17:41:44.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\tests\\MShop.Core.Test\\Class1.cs",
+              "RelativeDocumentMoniker": "tests\\MShop.Core.Test\\Class1.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\tests\\MShop.Core.Test\\Class1.cs",
+              "RelativeToolTip": "tests\\MShop.Core.Test\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T18:27:37.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GetCustomerByIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\Handlers\\GetCustomerByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Queries\\Handlers\\GetCustomerByIdQueryHandler.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\Handlers\\GetCustomerByIdQueryHandler.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Queries\\Handlers\\GetCustomerByIdQueryHandler.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wCYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T17:45:46.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GetCustomerByEmailQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\Handlers\\GetCustomerByEmailQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Queries\\Handlers\\GetCustomerByEmailQueryHandler.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\Handlers\\GetCustomerByEmailQueryHandler.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Queries\\Handlers\\GetCustomerByEmailQueryHandler.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T17:49:15.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\tests\\MShop.Unit.Test\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "tests\\MShop.Unit.Test\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\tests\\MShop.Unit.Test\\UnitTest1.cs",
+              "RelativeToolTip": "tests\\MShop.Unit.Test\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T18:28:13.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CryptoService.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Helpers\\CryptoService.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.Data\\Helpers\\CryptoService.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Helpers\\CryptoService.cs",
+              "RelativeToolTip": "src\\MShop.Infra.Data\\Helpers\\CryptoService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T15:13:01.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IDomainEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\Mshop.Core\\Message\\DomainEvent\\IDomainEventHandler.cs",
+              "RelativeDocumentMoniker": "src\\Mshop.Core\\Message\\DomainEvent\\IDomainEventHandler.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\Mshop.Core\\Message\\DomainEvent\\IDomainEventHandler.cs",
+              "RelativeToolTip": "src\\Mshop.Core\\Message\\DomainEvent\\IDomainEventHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T18:51:53.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.API.Customer\\Controllers\\v1\\CustomerController.cs",
+              "RelativeDocumentMoniker": "src\\MShop.API.Customer\\Controllers\\v1\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.API.Customer\\Controllers\\v1\\CustomerController.cs",
+              "RelativeToolTip": "src\\MShop.API.Customer\\Controllers\\v1\\CustomerController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwD4AAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T18:32:49.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GetCustomerByNameQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\Handlers\\GetCustomerByNameQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Queries\\Handlers\\GetCustomerByNameQueryHandler.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\Handlers\\GetCustomerByNameQueryHandler.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Queries\\Handlers\\GetCustomerByNameQueryHandler.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwCcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T17:49:20.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GetCustomerByEmailQuery.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\GetCustomerByEmailQuery.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Queries\\GetCustomerByEmailQuery.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\GetCustomerByEmailQuery.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Queries\\GetCustomerByEmailQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T17:49:08.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Documentacao.txt",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\documentacao\\Documentacao.txt",
+              "RelativeDocumentMoniker": "documentacao\\Documentacao.txt",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\documentacao\\Documentacao.txt",
+              "RelativeToolTip": "documentacao\\Documentacao.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-08-15T14:52:43.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ServiceResgistrationExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.keycloak\\ServiceResgistrationExtensions.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.keycloak\\ServiceResgistrationExtensions.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.keycloak\\ServiceResgistrationExtensions.cs",
+              "RelativeToolTip": "src\\MShop.Infra.keycloak\\ServiceResgistrationExtensions.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAowBkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T14:38:05.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.API.Customer\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "src\\MShop.API.Customer\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.API.Customer\\appsettings.Development.json",
+              "RelativeToolTip": "src\\MShop.API.Customer\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-15T15:13:58.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ICryptoService.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Interface\\ICryptoService.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.Data\\Interface\\ICryptoService.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\Interface\\ICryptoService.cs",
+              "RelativeToolTip": "src\\MShop.Infra.Data\\Interface\\ICryptoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T15:21:16.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "MShop.Infra.Data",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\MShop.Infra.Data.csproj",
+              "RelativeDocumentMoniker": "src\\MShop.Infra.Data\\MShop.Infra.Data.csproj",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data\\MShop.Infra.Data.csproj",
+              "RelativeToolTip": "src\\MShop.Infra.Data\\MShop.Infra.Data.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-15T15:01:10.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ServiceResgistrationExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\ServiceResgistrationExtensions.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\ServiceResgistrationExtensions.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\ServiceResgistrationExtensions.cs",
+              "RelativeToolTip": "src\\MShop.Application\\ServiceResgistrationExtensions.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBUAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T14:11:47.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "GetCustomerByNameQuery.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\GetCustomerByNameQuery.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Queries\\GetCustomerByNameQuery.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Queries\\GetCustomerByNameQuery.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Queries\\GetCustomerByNameQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T17:49:12.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "CustomerResultDto.cs",
+              "DocumentMoniker": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Dtos\\CustomerResultDto.cs",
+              "RelativeDocumentMoniker": "src\\MShop.Application\\Dtos\\CustomerResultDto.cs",
+              "ToolTip": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application\\Dtos\\CustomerResultDto.cs",
+              "RelativeToolTip": "src\\MShop.Application\\Dtos\\CustomerResultDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T17:49:01.09Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1858,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
