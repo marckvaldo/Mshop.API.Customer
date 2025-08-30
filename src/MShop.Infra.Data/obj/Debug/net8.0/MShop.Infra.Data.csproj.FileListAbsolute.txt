@@ -17,3 +17,4 @@ C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MS
 C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.Infra.Data\obj\Debug\net8.0\MShop.Infra.Data.pdb
 C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.Infra.Data\obj\Debug\net8.0\MShop.Infra.Data.genruntimeconfig.cache
 C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.Infra.Data\obj\Debug\net8.0\ref\MShop.Infra.Data.dll
+C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.Infra.Data\obj\Debug\net8.0\MShop.Infra.Data.sourcelink.json

@@ -47,6 +47,22 @@ namespace MShop.Domain.Entities
 
         public override bool IsValid(INotification notification)
         {
+            var validator = new CustomerValidation(false);
+            var result = validator.Validate(this);
+
+            foreach (var error in result.Errors)
+            {
+                notification.AddNotifications(error.ErrorMessage);
+            }
+
+            if (Address is not null)
+                Address.IsValid(notification);
+
+            return !notification.HasErrors();
+        }
+
+        public bool IsValidPassword(INotification notification)
+        {
             var validator = new CustomerValidation();
             var result = validator.Validate(this);
 

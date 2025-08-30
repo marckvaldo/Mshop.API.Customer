@@ -5,7 +5,7 @@ namespace MShop.Domain.Validation
 {
     public class CustomerValidation : AbstractValidator<Customer>
     {
-        public CustomerValidation()
+        public CustomerValidation(bool validationPassword = true)
         {
             RuleFor(c => c.Name)
                 .NotEmpty().WithMessage("O nome é obrigatório.")
@@ -25,10 +25,13 @@ namespace MShop.Domain.Validation
                 .NotNull().WithMessage("O endereço é obrigatório.")
                 .SetValidator(new AddressValidation());*/
 
-            RuleFor(c => c.Password)
-                .NotEmpty().WithMessage("Senha é obrigatória")
-                .Must(IsPasswordStrong)
-                .WithMessage("Senha não atende aos requisitos de segurança");
+            if (validationPassword)
+            {
+                RuleFor(c => c.Password)
+                    .NotEmpty().WithMessage("Senha é obrigatória")
+                    .Must(IsPasswordStrong)
+                    .WithMessage("Senha não atende aos requisitos de segurança");
+            }
         }
 
         private bool IsPasswordStrong(string password)

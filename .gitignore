@@ -31,9 +31,9 @@ tests/MShop.Core.Test/.vs/
 tests/MShop.Core.Test/bin/
 tests/MShop.Core.Test/obj/
 
-tests/Mshop.UnitTests/.vs/
-tests/Mshop.UnitTests/bin/
-tests/Mshop.UnitTests/obj/
+tests/Mshop.UnitTest/.vs/
+tests/Mshop.UnitTest/bin/
+tests/MShop.UnitTest/obj/
 
 tests/Mshop.IntegrationTest/.vs/
 tests/Mshop.IntegrationTest/bin/
