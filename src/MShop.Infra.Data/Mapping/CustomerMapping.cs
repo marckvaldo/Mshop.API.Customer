@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MShop.Domain.Entities;
 
-namespace Mshop.Infra.Data.Mapping
+namespace MShop.Infra.Data.Mapping
 {
     public class CustomerMapping : IEntityTypeConfiguration<Customer>
     {
@@ -33,7 +33,7 @@ namespace Mshop.Infra.Data.Mapping
                 .HasColumnType("bool")
                 .HasDefaultValue(false);*/
 
-            builder.Property(c => c.AddressId);
+            //builder.Property(c => c.AddressId);
                 
             builder.Ignore(c => c.Events);
             builder.Ignore(c => c.Address);

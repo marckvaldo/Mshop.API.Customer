@@ -1,12 +1,12 @@
 ﻿using FluentValidation.AspNetCore;
 using FluentValidation.Results;
-using Mshop.Core.Message;
-using Mshop.Core.Message;
+using MShop.Core.Message;
+using MShop.Core.Message;
 using System.Collections.ObjectModel;
 using System.Text.Json.Serialization;
 
 
-namespace Mshop.Core.DomainObject
+namespace MShop.Core.DomainObject
 {
     public abstract class Entity
     {

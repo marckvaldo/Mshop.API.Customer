@@ -13,7 +13,7 @@ builder.Services.AddConfigurationController()
     .AddConfigurationSwagger()
     .AddConfigurationModelState()
     .AddDataBaseAndRepository(builder.Configuration)
-    .AddKeycloakServices()
+    .AddKeycloakServices(builder.Configuration)
     .AddConfigurationHealthChecks()
     .AddHandlers();
 
@@ -31,3 +31,11 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+namespace MShop.API.Customer
+{
+    public partial class Program
+    {
+
+    }
+}

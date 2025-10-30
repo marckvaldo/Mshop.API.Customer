@@ -1,6 +1,6 @@
-﻿using Mshop.Core.Message;
+﻿using MShop.Core.Message;
 
-namespace Mshop.Core.DomainObject
+namespace MShop.Core.DomainObject
 {
     public class Result<T> where T : IModelOutPut
     {

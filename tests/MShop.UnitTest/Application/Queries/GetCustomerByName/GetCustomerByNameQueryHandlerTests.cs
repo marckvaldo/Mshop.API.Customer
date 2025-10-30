@@ -3,13 +3,14 @@ using Moq;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Mshop.Application.Queries;
+using MShop.Application.Queries;
 using MShop.Domain.Entities;
-using Mshop.Infra.Data.Interface;
-using Mshop.Core.Message;
-using Mshop.Application.Dtos;
+using MShop.Infra.Data.Interface;
+using MShop.Core.Message;
+using MShop.Application.Dtos;
 using System.Linq.Expressions;
-using Mshop.Application.Queries.Handlers;
+using MShop.Application.Queries.Handlers;
+using MShop.Domain.ValueObjects;
 
 namespace MShop.UnitTest.Application.Queries.GetCustomerByName
 {
@@ -28,9 +29,11 @@ namespace MShop.UnitTest.Application.Queries.GetCustomerByName
             var name = "Cliente Teste";
             var listCustomer = ListCustomerFaker(name);
             var customer = listCustomer.Where(x=>x.Name == name).First();
+            var listAddres = ListAddressFaker(customer);
 
             //_customerRepoMock = new Mock<ICustomerRepository>();
             _customerRepoMock.Setup(r => r.Filter(It.IsAny<Expression<Func<Customer, bool>>>())).ReturnsAsync(listCustomer.Where(x => x.Name == name).ToList());
+            _addressRepositoryMock.Setup(r=>r.Filter(It.IsAny<Expression<Func<Address, bool>>>())).ReturnsAsync(listAddres);
 
             var handler = CreateHandler(_customerRepoMock, _addressRepositoryMock, _notification);
             var query = new GetCustomerByNameQuery(name);

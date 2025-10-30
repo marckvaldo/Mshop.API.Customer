@@ -1,7 +1,7 @@
 using MediatR;
-using Mshop.Application.Dtos;
+using MShop.Application.Dtos;
 
-namespace Mshop.Application.Commands
+namespace MShop.Application.Commands
 {
     public class CreateCustomerCommand : IRequest<bool>
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Mshop.Core.DomainObject;
-using Mshop.Core.Message;
+using MShop.Core.DomainObject;
+using MShop.Core.Message;
 using MShop.API.Customer.Extension;
 
 namespace MShop.API.Customer.Controllers.v1

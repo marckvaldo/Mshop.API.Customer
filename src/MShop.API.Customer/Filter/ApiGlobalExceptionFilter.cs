@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Hosting;
-using Mshop.Core.Message;
+using MShop.Core.Message;
 using MShop.API.Customer.Extension;
 
 namespace MShop.API.Customer.Filter

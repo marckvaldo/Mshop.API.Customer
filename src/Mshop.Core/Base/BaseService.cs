@@ -1,7 +1,7 @@
 ﻿
-using Mshop.Core.Message;
+using MShop.Core.Message;
 
-namespace Mshop.Core.Base
+namespace MShop.Core.Base
 {
     public abstract class BaseService
     {

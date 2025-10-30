@@ -1,32 +1,40 @@
-using Mshop.Core;
-using Mshop.Core.Message;
-using Mshop.Core.Message.DomainEvent;
-using Mshop.Infra.Data.Interface;
+using MShop.Core;
+using MShop.Core.Message;
+using MShop.Core.Message.DomainEvent;
+using MShop.Infra.Data.Interface;
 using MShop.Domain.Event;
 using MShop.Infra.Keycloak.Interfaces;
 using System.Threading;
 
-namespace Mshop.Application.Event
+namespace MShop.Application.Event
 {
     public class CreatedCustomerEventHandler : IDomainEventHandler<CreatedCustomerEvent>
     {
         private readonly INotification _notification;
-        private readonly IKeycloakUserService _keycloakUserService;
+        private readonly IKeycloakService _keycloakService;
         private readonly ICustomerRepository _customerRepository;
 
         public CreatedCustomerEventHandler(
             INotification notification, 
-            IKeycloakUserService keycloakUserService, 
+            IKeycloakService keycloakUserService, 
             ICustomerRepository customerRepository)
         {
             _notification = notification;
-            _keycloakUserService = keycloakUserService;
+            _keycloakService = keycloakUserService;
             _customerRepository = customerRepository;
         }
 
         public async Task<bool> HandlerAsync(CreatedCustomerEvent domainEvent, CancellationToken cancellationToken)
         {
-            var result = await _keycloakUserService.CreateUserAsync(
+            var customer = await _customerRepository.GetById(domainEvent.CustomerId);
+
+            if (customer is null)
+            {
+                _notification.AddNotifications("Customer não encontrado.");
+                return false;
+            }
+
+            var result = await _keycloakService.CreateUserAsync(
                 domainEvent.Name,
                 domainEvent.Email,
                 domainEvent.Phone,
@@ -37,13 +45,6 @@ namespace Mshop.Application.Event
             if (!result)
                 return false;
 
-            var customer = await _customerRepository.GetById(domainEvent.CustomerId);
-
-            if (customer is null)
-            {
-                _notification.AddNotifications("Customer não encontrado.");
-                return false;
-            }
 
             customer.SetCreatedInKeycloakTrue();
             await _customerRepository.Update(customer, cancellationToken);

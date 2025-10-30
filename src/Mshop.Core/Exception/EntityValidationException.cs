@@ -1,6 +1,6 @@
-﻿using Mshop.Core.Message;
+﻿using MShop.Core.Message;
 
-namespace Mshop.Core.Exception
+namespace MShop.Core.Exception
 {
     public class EntityValidationException : ApplicationException
     {

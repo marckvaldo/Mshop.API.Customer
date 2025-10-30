@@ -1,4 +1,4 @@
-﻿namespace Mshop.Core.Message.DomainEvent
+﻿namespace MShop.Core.Message.DomainEvent
 {
     public interface IMessageProducer
     {

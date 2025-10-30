@@ -1,4 +1,4 @@
-﻿namespace Mshop.Core.Enum.Paginated
+﻿namespace MShop.Core.Enum.Paginated
 {
     public enum SearchOrder
     {

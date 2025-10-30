@@ -1,9 +1,9 @@
 using Moq;
-using Mshop.Application.Commands;
-using Mshop.Application.Commands.Handlers;
-using Mshop.Core.Data;
-using Mshop.Core.Message;
-using Mshop.Infra.Data.Interface;
+using MShop.Application.Commands;
+using MShop.Application.Commands.Handlers;
+using MShop.Core.Data;
+using MShop.Core.Message;
+using MShop.Infra.Data.Interface;
 using MShop.Core.Test.Domain.Entity.Address;
 using MShop.Domain.Entities;
 using MShop.Domain.ValueObjects;
@@ -48,7 +48,7 @@ namespace MShop.UnitTest.Application.Commands.AddAddress
 
         protected AddAddressCommand RequestAddressValid(Guid customerId)
         {
-            var addressDto = new Mshop.Application.Dtos.AddressDto
+            var addressDto = new MShop.Application.Dtos.AddressDto
             {
                 Street = "Rua Teste",
                 Number = "123",
@@ -57,20 +57,21 @@ namespace MShop.UnitTest.Application.Commands.AddAddress
                 City = "Cidade",
                 State = "ST",
                 PostalCode = "00000-000",
-                Country = "Brasil"
+                Country = "Brasil",
+                CustomerId = customerId
             };
 
-            var updateDto = new Mshop.Application.Dtos.UpdateCustomerAddressDto
+            /*var updateDto = new MShop.Application.Dtos.UpdateCustomerAddressDto
             {
                 CustomerId = customerId,
                 Address = addressDto
-            };
-            return new AddAddressCommand(updateDto);
+            };*/
+            return new AddAddressCommand(addressDto);
         }
 
         protected AddAddressCommand RequestAddressIsNotValid(Guid customerId)
         {
-            var addressDto = new Mshop.Application.Dtos.AddressDto
+            var addressDto = new MShop.Application.Dtos.AddressDto
             {
                 Street = "",
                 Number = "123",
@@ -79,15 +80,16 @@ namespace MShop.UnitTest.Application.Commands.AddAddress
                 City = "",
                 State = "ST",
                 PostalCode = "00000-000",
-                Country = "Brasil"
+                Country = "Brasil",
+                CustomerId = customerId
             };
 
-            var updateDto = new Mshop.Application.Dtos.UpdateCustomerAddressDto
+            /*var updateDto = new MShop.Application.Dtos.UpdateCustomerAddressDto
             {
                 CustomerId = customerId,
                 Address = addressDto
-            };
-            return new AddAddressCommand(updateDto);
+            };*/
+            return new AddAddressCommand(addressDto);
         }
     }
 }

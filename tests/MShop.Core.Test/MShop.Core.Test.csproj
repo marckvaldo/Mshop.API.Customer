@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\MShop.API.Customer\MShop.API.Customer.csproj" />
     <ProjectReference Include="..\..\src\MShop.Domain\MShop.Domain.csproj" />
   </ItemGroup>
 

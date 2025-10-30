@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace Mshop.Application.Commands
+namespace MShop.Application.Commands
 {
     public class DeleteAddressCommand : IRequest<bool>
     {

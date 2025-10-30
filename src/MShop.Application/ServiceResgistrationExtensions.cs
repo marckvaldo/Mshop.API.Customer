@@ -1,14 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Mshop.Application.Event;
-using Mshop.Core.Message;
-using Mshop.Core.Message.DomainEvent;
+using MShop.Application.Event;
+using MShop.Core.Message;
+using MShop.Core.Message.DomainEvent;
 using MShop.Domain.Event;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Message = Mshop.Core.Message;
+using Message = MShop.Core.Message;
 
 namespace MShop.Application
 {

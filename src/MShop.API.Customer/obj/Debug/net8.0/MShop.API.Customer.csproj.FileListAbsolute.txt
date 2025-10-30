@@ -127,4 +127,6 @@ C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MS
 C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.API.Customer\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.API.Customer\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.API.Customer\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.API.Customer\obj\Debug\net8.0\MShop.API.Customer.sourcelink.json
 C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.API.Customer\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\IQ SISTEMAS\Documents\mShopping\new\Mshopping\MShop.API.Customer\src\MShop.API.Customer\bin\Debug\net8.0\appsettings.E2ETests.json

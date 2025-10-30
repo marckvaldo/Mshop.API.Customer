@@ -1,0 +1,9 @@
+{
+  "MShop.API.Customer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.API.Customer",
+  "MShop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Application",
+  "Mshop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\Mshop.Core",
+  "MShop.Core.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\tests\\MShop.Core.Test",
+  "MShop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Domain",
+  "MShop.Infra.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.Data",
+  "MShop.Infra.Keycloak, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\IQ SISTEMAS\\Documents\\mShopping\\new\\Mshopping\\MShop.API.Customer\\src\\MShop.Infra.keycloak"
+}

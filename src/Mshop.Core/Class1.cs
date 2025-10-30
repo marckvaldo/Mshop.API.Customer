@@ -1,4 +1,4 @@
-﻿namespace Mshop.Core
+﻿namespace MShop.Core
 {
     public class Class1
     {

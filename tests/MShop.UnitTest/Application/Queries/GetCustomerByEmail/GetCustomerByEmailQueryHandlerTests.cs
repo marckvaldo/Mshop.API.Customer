@@ -1,18 +1,8 @@
-using MediatR;
 using Moq;
-using Mshop.Application.Dtos;
-using Mshop.Application.Queries;
-using Mshop.Application.Queries.Handlers;
-using CoreMessage = Mshop.Core.Message;
-using Mshop.Infra.Data.Interface;
-using Mshop.Infra.Data.Repository;
+using MShop.Application.Queries;
 using MShop.Domain.Entities;
-using System;
+using MShop.Domain.ValueObjects;
 using System.Linq.Expressions;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
-using Mshop.Core.Message;
 
 namespace MShop.UnitTest.Application.Queries.GetCustomerByEmail
 {
@@ -29,8 +19,10 @@ namespace MShop.UnitTest.Application.Queries.GetCustomerByEmail
             var email = "cliente@teste.com";
             var listCustomer = ListCustomerFaker("",email);
             var customer = listCustomer.Where(x => x.Email == email).First();
+            var listAddress = ListAddressFaker(customer);
 
             _customerRepoMock.Setup(r => r.Filter(It.IsAny<Expression<Func<Customer, bool>>>())).ReturnsAsync(listCustomer.Where(x => x.Email == email).ToList());
+            _addressRepositoryMock.Setup(r => r.Filter(It.IsAny<Expression<Func<Address, bool>>>())).ReturnsAsync(listAddress);
 
             var handler = CreateHandler(_customerRepoMock, _addressRepositoryMock, _notification);
             var query = new GetCustomerByEmailQuery(email);

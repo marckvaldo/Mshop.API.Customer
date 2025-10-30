@@ -1,11 +1,11 @@
-﻿using Mshop.Core.Message;
+﻿using MShop.Core.Message;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mshop.Core.Base
+namespace MShop.Core.Base
 {
     public abstract class BaseCommand
     {

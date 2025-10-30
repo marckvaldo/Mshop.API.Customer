@@ -1,7 +1,7 @@
 using MShop.Domain.ValueObjects;
-using Mshop.Core.Data;
+using MShop.Core.Data;
 
-namespace Mshop.Infra.Data.Interface
+namespace MShop.Infra.Data.Interface
 {
     public interface IAddressRepository : IRepository<Address>
     {

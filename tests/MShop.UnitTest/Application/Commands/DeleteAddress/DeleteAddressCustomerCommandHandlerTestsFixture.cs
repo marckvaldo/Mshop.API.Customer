@@ -1,18 +1,10 @@
 using Moq;
-using Mshop.Application.Commands;
-using Mshop.Application.Commands.Handlers;
-using Mshop.Core.Data;
-using Mshop.Core.Message;
-using Mshop.Infra.Data.Interface;
-using MShop.Domain.Entities;
-using MShop.Domain.ValueObjects;
+using MShop.Application.Commands;
+using MShop.Application.Commands.Handlers;
+using MShop.Core.Data;
+using MShop.Core.Message;
 using MShop.Infra.Data.Interface;
 using MShop.UnitTest.Application.Commands.Common;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace MShop.UnitTest.Application.Commands.DeleteAddress
 {

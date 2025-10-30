@@ -1,4 +1,4 @@
-﻿namespace Mshop.Core.DomainObject
+﻿namespace MShop.Core.DomainObject
 {
     public interface IModelOutPut
     {

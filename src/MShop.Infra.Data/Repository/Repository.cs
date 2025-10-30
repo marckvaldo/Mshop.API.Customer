@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using Mshop.Core.Data;
-using Mshop.Core.Paginated;
+using MShop.Core.Data;
+using MShop.Core.Paginated;
 using System.Linq.Expressions;
 
-namespace Mshop.Infra.Data.Repository
+namespace MShop.Infra.Data.Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Mshop.Core.DomainObject.Entity
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : MShop.Core.DomainObject.Entity
     {
         protected readonly DbContext _context;
         protected readonly DbSet<TEntity> _dbSet;
@@ -35,7 +35,7 @@ namespace Mshop.Infra.Data.Repository
 
         public virtual async Task<TEntity?> GetById(Guid id)
         {
-            return await _dbSet.FindAsync(id);
+            return await _dbSet.AsNoTracking().FirstOrDefaultAsync(x=>x.Id == id);
         }
 
         public virtual async Task<List<TEntity>> GetValuesList()

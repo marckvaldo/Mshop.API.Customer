@@ -1,7 +1,7 @@
-﻿using Mshop.Core.Message;
+﻿using MShop.Core.Message;
 using System.Collections.ObjectModel;
 
-namespace Mshop.Core.DomainObject
+namespace MShop.Core.DomainObject
 {
     public interface IAggregateRoot
     {

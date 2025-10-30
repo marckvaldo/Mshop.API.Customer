@@ -1,16 +1,5 @@
-using Xunit;
 using Moq;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Mshop.Application.Commands.Handlers;
-using Mshop.Application.Commands;
 using MShop.Domain.Entities;
-using Mshop.Infra.Data.Interface;
-using Mshop.Core.Message;
-using Mshop.Core.Data;
-using MShop.Infra.Data.Interface;
 using System.Linq.Expressions;
 
 namespace MShop.UnitTest.Application.Commands.CreateCustomer

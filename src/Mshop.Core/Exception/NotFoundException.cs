@@ -1,4 +1,4 @@
-﻿namespace Mshop.Core.Exception
+﻿namespace MShop.Core.Exception
 {
     public class NotFoundException : ApplicationException
     {

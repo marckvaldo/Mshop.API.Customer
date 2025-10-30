@@ -1,11 +1,11 @@
 using MediatR;
-using Mshop.Core.Base;
-using Message = Mshop.Core.Message;
+using MShop.Core.Base;
+using Message = MShop.Core.Message;
 using MShop.Domain.Entities;
-using Mshop.Infra.Data.Interface;
-using Mshop.Core.Data;
+using MShop.Infra.Data.Interface;
+using MShop.Core.Data;
 
-namespace Mshop.Application.Commands.Handlers
+namespace MShop.Application.Commands.Handlers
 {
     public class DeleteAddressCustomerCommandHandler : BaseCommand, IRequestHandler<DeleteAddressCommand, bool>
     {
@@ -33,13 +33,6 @@ namespace Mshop.Application.Commands.Handlers
                 Notificar("Endereço não encontrado.");
                 return false;
             }
-
-            var customers = await _customerRepository.Filter(c => c.AddressId == address.Id);
-            var customer = customers.FirstOrDefault();
-            customer?.RemoveAddress();
-
-            if(customer is not null)
-                await _customerRepository.Update(customer, cancellationToken);
 
             await _addressRepository.DeleteById(address, cancellationToken);
             await _unitOfWork.CommitAsync(cancellationToken);

@@ -1,13 +1,13 @@
 using MediatR;
-using Mshop.Application.Dtos;
+using MShop.Application.Dtos;
 
-namespace Mshop.Application.Commands
+namespace MShop.Application.Commands
 {
     public class AddAddressCommand : IRequest<bool>
     {
-        public UpdateCustomerAddressDto Address { get; }
+        public AddressDto Address { get; }
 
-        public AddAddressCommand(UpdateCustomerAddressDto address)
+        public AddAddressCommand(AddressDto address)
         {
             Address = address;
         }

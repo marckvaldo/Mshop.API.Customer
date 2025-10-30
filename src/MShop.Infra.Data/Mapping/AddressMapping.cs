@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MShop.Domain.ValueObjects;
 
-namespace Mshop.Infra.Data.Mapping
+namespace MShop.Infra.Data.Mapping
 {
     public class AddressMapping : IEntityTypeConfiguration<Address>
     {
@@ -20,8 +20,10 @@ namespace Mshop.Infra.Data.Mapping
             builder.Property(a => a.State).IsRequired().HasColumnType("varchar(50)");
             builder.Property(a => a.PostalCode).IsRequired().HasColumnType("varchar(20)");
             builder.Property(a => a.Country).IsRequired().HasColumnType("varchar(50)");
+            builder.Property(a => a.CustomerId);
 
             builder.Ignore(c => c.Events);
+            builder.Ignore(c => c.Customer);
         }
     }
 }

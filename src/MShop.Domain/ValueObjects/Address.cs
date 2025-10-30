@@ -1,5 +1,6 @@
-using Mshop.Core.DomainObject;
-using Mshop.Core.Message;
+using MShop.Core.DomainObject;
+using MShop.Core.Message;
+using MShop.Domain.Entities;
 using MShop.Domain.Validation;
 
 namespace MShop.Domain.ValueObjects
@@ -14,6 +15,9 @@ namespace MShop.Domain.ValueObjects
         public string State { get; private set; }
         public string PostalCode { get; private set; }
         public string Country { get; private set; }
+        public Guid CustomerId { get; private set; }
+
+        public Customer Customer { get; private set; }
 
         public Address(
             string street,
@@ -65,6 +69,13 @@ namespace MShop.Domain.ValueObjects
             }
 
             return result.IsValid;
+        }
+
+        public bool AddCustomer(Customer customer)
+        {
+            Customer = customer;
+            CustomerId = customer.Id;
+            return true;
         }
     }
 }

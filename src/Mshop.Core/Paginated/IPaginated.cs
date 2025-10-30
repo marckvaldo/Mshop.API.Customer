@@ -1,6 +1,6 @@
-﻿using Mshop.Core.DomainObject;
+﻿using MShop.Core.DomainObject;
 
-namespace Mshop.Core.Paginated
+namespace MShop.Core.Paginated
 {
     public interface IPaginated<TEntity> where TEntity : Entity
     {

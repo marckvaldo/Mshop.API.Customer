@@ -1,4 +1,4 @@
-namespace Mshop.Application.Dtos
+namespace MShop.Application.Dtos
 {
     public class UpdateCustomerDto
     {

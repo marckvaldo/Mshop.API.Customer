@@ -1,4 +1,4 @@
-﻿namespace Mshop.Core.Message
+﻿namespace MShop.Core.Message
 {
     public abstract class Notification
     {

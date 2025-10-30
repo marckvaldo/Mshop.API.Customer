@@ -1,8 +1,8 @@
 using MShop.Domain.ValueObjects;
-using Mshop.Infra.Data.Context;
-using Mshop.Infra.Data.Interface;
+using MShop.Infra.Data.Context;
+using MShop.Infra.Data.Interface;
 
-namespace Mshop.Infra.Data.Repository
+namespace MShop.Infra.Data.Repository
 {
     public class AddressRepository : Repository<Address>, IAddressRepository
     {

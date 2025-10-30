@@ -79,7 +79,7 @@ namespace MShop.API.Customer.Configuration
         {
             var info = new OpenApiInfo()
             {
-                Title = "Mshop API Cart - Shopping",
+                Title = "MShop API Cart - Shopping",
                 Version = description.ApiVersion.ToString(),
                 Description = description.IsDeprecated ? "This API version has been deprecated." : string.Empty,
                 //Contact = new OpenApiContact() { Name = "", Email = "", Url = new Uri("") },

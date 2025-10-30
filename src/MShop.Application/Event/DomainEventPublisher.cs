@@ -1,9 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
-using Mshop.Core.DomainObject;
-using Mshop.Core.Message.DomainEvent;
-using Message = Mshop.Core.Message;
+using MShop.Core.DomainObject;
+using MShop.Core.Message.DomainEvent;
+using Message = MShop.Core.Message;
 
-namespace Mshop.Application.Event
+namespace MShop.Application.Event
 {
     public class DomainEventPublisher : IDomainEventPublisher
     {

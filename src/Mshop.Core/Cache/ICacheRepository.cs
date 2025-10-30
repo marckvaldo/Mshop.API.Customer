@@ -1,7 +1,7 @@
-﻿using Mshop.Core.DomainObject;
-using Mshop.Core.Paginated;
+﻿using MShop.Core.DomainObject;
+using MShop.Core.Paginated;
 
-namespace Mshop.Core.Cache;
+namespace MShop.Core.Cache;
 
 public interface ICacheRepository<TEntity>  where TEntity : Entity
 {

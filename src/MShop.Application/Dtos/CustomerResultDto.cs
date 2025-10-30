@@ -1,6 +1,6 @@
-using Mshop.Core.DomainObject;
+using MShop.Core.DomainObject;
 
-namespace Mshop.Application.Dtos
+namespace MShop.Application.Dtos
 {
     public class CustomerResultDto : IModelOutPut
     {
@@ -10,7 +10,7 @@ namespace Mshop.Application.Dtos
         public string Phone { get; set; }
         public AddressResultDto Address { get; set; }
     }
-
+    
     public class AddressResultDto : IModelOutPut
     {
         public string Street { get; set; }
@@ -21,5 +21,11 @@ namespace Mshop.Application.Dtos
         public string State { get; set; }
         public string PostalCode { get; set; }
         public string Country { get; set; }
+        public Guid Id { get; set; }
+    }
+
+    public class ListAddressResultDto : IModelOutPut
+    {
+        public List<AddressResultDto> Addresses { get; set; } = new();
     }
 }

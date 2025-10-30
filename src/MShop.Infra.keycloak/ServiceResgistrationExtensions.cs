@@ -13,14 +13,14 @@ namespace MShop.Infra.Keycloak
 {
     public static class ServiceResgistrationExtensions
     {
-        public static IServiceCollection AddKeycloakServices(this IServiceCollection services)
+        public static IServiceCollection AddKeycloakServices(this IServiceCollection services, IConfiguration configuration)
         {
             
             
 
             services.AddSingleton<KeycloakSettings>(sp =>
             {
-                var configuration = sp.GetRequiredService<IConfiguration>();
+                //var configuration = sp.GetRequiredService<IConfiguration>();
                 return new KeycloakSettings
                 {
                     AuthServerUrl = configuration["Keycloak:AuthServerUrl"],
@@ -31,13 +31,13 @@ namespace MShop.Infra.Keycloak
             });
 
 
-            services.AddHttpClient<IKeycloakUserService, KeycloakUserService>(client =>
+            services.AddHttpClient<IKeycloakService, KeycloakService>(client =>
             {
                 client.BaseAddress = new Uri("https://keycloak.example.com/auth/admin/realms/your-realm/");
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
             });
 
-            services.AddScoped<IKeycloakUserService, KeycloakUserService>();            
+            services.AddScoped<IKeycloakService, KeycloakService>();            
             return services;
         }
     }

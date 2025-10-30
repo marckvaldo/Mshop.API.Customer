@@ -1,5 +1,5 @@
 src/MShop.API.Customer/.vs/
-src/MShop.API.Consumer/bin/
+src/MShop.API.Customer/bin/
 src/MShop.API.Consumer/obj/
 
 src/MShop.Application/.vs/
@@ -20,7 +20,7 @@ src/Mshop.Domain/obj/
 
 src/MShop.Infra.Data/.vs/
 src/MShop.Infra.Data/bin/
-src/MShop.Infra.Datar/obj/
+src/MShop.Infra.Data/obj/
 
 src/MShop.Infra.keycloak/.vs/
 src/MShop.Infra.keycloak/bin/

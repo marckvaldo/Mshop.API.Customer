@@ -1,8 +1,8 @@
-﻿using Mshop.Core.DomainObject;
-using Mshop.Core.Paginated;
+﻿using MShop.Core.DomainObject;
+using MShop.Core.Paginated;
 using System.Linq.Expressions;
 
-namespace Mshop.Core.Data
+namespace MShop.Core.Data
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : Entity
     {

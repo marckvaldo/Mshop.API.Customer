@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Mshop.Infra.Data.Mapping;
+using MShop.Infra.Data.Mapping;
 using MShop.Domain.Entities;
 using MShop.Domain.ValueObjects;
 
-namespace Mshop.Infra.Data.Context
+namespace MShop.Infra.Data.Context
 {
     public class MshopDbContext : DbContext
     {

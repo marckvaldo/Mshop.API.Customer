@@ -1,6 +1,6 @@
 using FluentValidation;
-using Mshop.Core.DomainObject;
-using Mshop.Core.Message;
+using MShop.Core.DomainObject;
+using MShop.Core.Message;
 using MShop.Domain.Validation;
 using MShop.Domain.ValueObjects;
 using System.Net;
@@ -15,7 +15,8 @@ namespace MShop.Domain.Entities
         public string? Password { get; private set; }
         public bool CreatedInKeycloak { get; private set; }
         public Address? Address { get; private set; }
-        public Guid AddressId { get; private set; }
+
+        //public Guid AddressId { get; private set; }
 
         public Customer(string name, string email, string phone)
         {
@@ -27,14 +28,14 @@ namespace MShop.Domain.Entities
         public bool AddAddress(Address address)
         {
             Address = address;
-            AddressId = address.Id;
+            //AddressId = address.Id;
             return true;
         }
 
         public bool RemoveAddress()
         {
             Address = null;
-            AddressId = Guid.Empty;
+            //AddressId = Guid.Empty;
             return true;
         }
 

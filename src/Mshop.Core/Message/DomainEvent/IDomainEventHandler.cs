@@ -1,6 +1,6 @@
-﻿using CoreObject = Mshop.Core.DomainObject;
+﻿using CoreObject = MShop.Core.DomainObject;
 
-namespace Mshop.Core.Message.DomainEvent
+namespace MShop.Core.Message.DomainEvent
 {
     public interface IDomainEventHandler<TDomainEvent> where TDomainEvent : CoreObject.DomainEvent
     {

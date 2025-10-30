@@ -1,4 +1,4 @@
-namespace Mshop.Application.Dtos
+namespace MShop.Application.Dtos
 {
     public class CreateCustomerDto
     {
@@ -6,8 +6,7 @@ namespace Mshop.Application.Dtos
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Password { get; set; }
-
-        //public AddressDto Address { get; set; }
+        public AddressDto? Address { get; set; }
     }
 
     public class AddressDto
@@ -20,5 +19,6 @@ namespace Mshop.Application.Dtos
         public string State { get; set; }
         public string PostalCode { get; set; }
         public string Country { get; set; }
+        public Guid CustomerId { get; set; }
     }
 }

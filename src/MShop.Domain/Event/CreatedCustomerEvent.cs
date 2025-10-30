@@ -1,4 +1,4 @@
-using Mshop.Core.DomainObject;
+using MShop.Core.DomainObject;
 
 namespace MShop.Domain.Event
 {

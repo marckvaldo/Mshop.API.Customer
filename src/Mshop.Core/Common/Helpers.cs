@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Mshop.Core.Common
+namespace MShop.Core.Common
 {
     public static class Helpers
     {

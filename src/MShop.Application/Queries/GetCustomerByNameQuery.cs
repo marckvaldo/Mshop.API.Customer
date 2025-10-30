@@ -1,9 +1,9 @@
 using MediatR;
-using Mshop.Core.Message;
-using Mshop.Application.Dtos;
-using Mshop.Core.DomainObject;
+using MShop.Core.Message;
+using MShop.Application.Dtos;
+using MShop.Core.DomainObject;
 
-namespace Mshop.Application.Queries
+namespace MShop.Application.Queries
 {
     public class GetCustomerByNameQuery : IRequest<Result<CustomerResultDto>>
     {

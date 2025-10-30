@@ -1,13 +1,11 @@
 using MediatR;
-using Mshop.Application.Dtos;
-using Mshop.Core;
-using Mshop.Core.Base;
-using Mshop.Core.Data;
-using Mshop.Core.DomainObject;
-using Mshop.Infra.Data.Interface;
-using Message = Mshop.Core.Message;
+using MShop.Application.Dtos;
+using MShop.Core.Base;
+using MShop.Core.DomainObject;
+using MShop.Infra.Data.Interface;
+using Message = MShop.Core.Message;
 
-namespace Mshop.Application.Queries.Handlers
+namespace MShop.Application.Queries.Handlers
 {
     public class GetCustomerByIdQueryHandler : BaseQuery, IRequestHandler<GetCustomerByIdQuery, Result<CustomerResultDto>>
     {
@@ -34,7 +32,9 @@ namespace Mshop.Application.Queries.Handlers
                 return Result<CustomerResultDto>.Error(Notifications);
             }
 
-            var address = await _addressRepository.GetById(customer.AddressId);
+            //var address = await _addressRepository.GetById(customer.AddressId);
+            var addressFilter = await _addressRepository.Filter(a => a.CustomerId == customer.Id);
+            var address = addressFilter.FirstOrDefault();
             if (address is not null)
                 customer.AddAddress(address);
 

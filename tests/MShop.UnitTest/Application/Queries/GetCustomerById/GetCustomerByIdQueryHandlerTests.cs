@@ -1,15 +1,8 @@
-using Castle.Core.Resource;
 using Moq;
-using Mshop.Application.Dtos;
-using Mshop.Application.Queries;
-using Mshop.Application.Queries.Handlers;
-using Mshop.Core.Message;
-using Mshop.Infra.Data.Interface;
+using MShop.Application.Queries;
 using MShop.Domain.Entities;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
+using MShop.Domain.ValueObjects;
+using System.Linq.Expressions;
 
 namespace MShop.UnitTest.Application.Queries.GetCustomerById
 {
@@ -23,8 +16,10 @@ namespace MShop.UnitTest.Application.Queries.GetCustomerById
             // Arrange
             var customer = GetCustomerFaker();
             var id = customer.Id;   
+            var listAddress = ListAddressFaker(customer);
 
             _customerRepoMock.Setup(r => r.GetById(id)).ReturnsAsync(customer);
+            _addressRepositoryMock.Setup(r => r.Filter(It.IsAny<Expression<Func<Address, bool>>>())).ReturnsAsync(listAddress);
 
             var handler = CreateHandler(_customerRepoMock, _addressRepositoryMock, _notification);
             var query = new GetCustomerByIdQuery(id);

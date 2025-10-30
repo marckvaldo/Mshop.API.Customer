@@ -1,15 +1,8 @@
-using Xunit;
 using Moq;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Mshop.Application.Commands.Handlers;
-using Mshop.Application.Commands;
-using MShop.Domain.Entities;
-using Mshop.Infra.Data.Interface;
-using Mshop.Core.Message;
-using Mshop.Core.Data;
+using MShop.Application.Commands;
+using MShop.Application.Commands.Handlers;
+using MShop.Core.Data;
+using MShop.Core.Message;
 using MShop.Infra.Data.Interface;
 using MShop.UnitTest.Application.Commands.Common;
 
@@ -52,7 +45,7 @@ namespace MShop.UnitTest.Application.Commands.CreateCustomer
         protected CreateCustomerCommand RequestCommandValid()
         {
             var customer = _customerFaker.Generate();
-            var customerDto = new Mshop.Application.Dtos.CreateCustomerDto
+            var customerDto = new MShop.Application.Dtos.CreateCustomerDto
             {
                 Name = customer.Name,
                 Email = customer.Email,
@@ -65,7 +58,7 @@ namespace MShop.UnitTest.Application.Commands.CreateCustomer
         protected CreateCustomerCommand RequestCommandIsNotValid()
         {
             var customer = _customerFaker.Generate();
-            var customerDto = new Mshop.Application.Dtos.CreateCustomerDto
+            var customerDto = new MShop.Application.Dtos.CreateCustomerDto
             {
                 Name = "",
                 Email = "",

@@ -1,7 +1,7 @@
 ﻿
-using Mshop.Core.Enum.Paginated;
+using MShop.Core.Enum.Paginated;
 
-namespace Mshop.Core.Paginated
+namespace MShop.Core.Paginated
 {
     public class PaginatedInPut
     {

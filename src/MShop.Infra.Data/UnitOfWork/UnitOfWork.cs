@@ -1,11 +1,9 @@
-using Microsoft.EntityFrameworkCore.Storage;
-using Mshop.Core.Data;
-using Mshop.Core.DomainObject;
-using Mshop.Core.Message.DomainEvent;
-using Mshop.Infra.Data.Context;
-using MShop.Domain;
+using MShop.Core.Data;
+using MShop.Core.DomainObject;
+using MShop.Core.Message.DomainEvent;
+using MShop.Infra.Data.Context;
 
-namespace Mshop.Infra.Data.UnitOfWork
+namespace MShop.Infra.Data.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {

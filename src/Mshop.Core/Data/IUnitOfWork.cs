@@ -1,4 +1,4 @@
-﻿namespace Mshop.Core.Data
+﻿namespace MShop.Core.Data
 {
     public interface IUnitOfWork
     {

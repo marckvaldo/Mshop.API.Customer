@@ -2,18 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Mshop.Core.Data;
-using Mshop.Infra.Data.Context;
-using Mshop.Infra.Data.Interface;
-using Mshop.Infra.Data.Repository;
-using Mshop.Infra.Data.UnitOfWork;
+using MShop.Core.Data;
+using MShop.Infra.Data.Context;
 using MShop.Infra.Data.Helpers;
 using MShop.Infra.Data.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MShop.Infra.Data.Repository;
 
 namespace MShop.Infra.Data
 {
@@ -33,9 +26,8 @@ namespace MShop.Infra.Data
 
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddSingleton<ICryptoService>(options => 
-                new CryptoService(configuration));
+            services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
+            services.AddSingleton<ICryptoService>(options => new CryptoService(configuration));
 
             return services;
         }

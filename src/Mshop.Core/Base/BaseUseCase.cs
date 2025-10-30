@@ -1,9 +1,9 @@
 ﻿using FluentValidation.Results;
-using Mshop.Core.Exception;
-using Mshop.Core.Message;
+using MShop.Core.Exception;
+using MShop.Core.Message;
 
 
-namespace Mshop.Core.Base
+namespace MShop.Core.Base
 {
     public abstract class BaseUseCase: Notifications
     {

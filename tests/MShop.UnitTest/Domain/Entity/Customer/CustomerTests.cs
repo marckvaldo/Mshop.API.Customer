@@ -2,7 +2,7 @@ using Xunit;
 using DomainEntity = MShop.Domain.Entities;
 using MShop.Core.Test.Domain.Entity.Customer;
 using MShop.Core.Test.Domain.Entity.Address;
-using Mshop.Core.Message;
+using MShop.Core.Message;
 using Moq;
 
 namespace MShop.UnitTest.Domain.Entity.Customer

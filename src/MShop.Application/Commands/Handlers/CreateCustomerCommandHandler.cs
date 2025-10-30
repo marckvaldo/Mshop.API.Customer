@@ -1,15 +1,15 @@
 using MediatR;
-using Mshop.Core.Base;
-using Mshop.Core.Data;
-using Mshop.Infra.Data.Interface;
-using Mshop.Infra.Data.Repository;
+using MShop.Core.Base;
+using MShop.Core.Data;
+using MShop.Infra.Data.Interface;
+using MShop.Infra.Data.Repository;
 using MShop.Domain.Entities;
 using MShop.Domain.Event;
 using MShop.Domain.ValueObjects;
 using MShop.Infra.Data.Interface;
-using Message = Mshop.Core.Message;
+using Message = MShop.Core.Message;
 
-namespace Mshop.Application.Commands.Handlers
+namespace MShop.Application.Commands.Handlers
 {
     public class CreateCustomerCommandHandler : BaseCommand, IRequestHandler<CreateCustomerCommand, bool>
     {
@@ -42,25 +42,28 @@ namespace Mshop.Application.Commands.Handlers
                 return false;
             }
 
-            /*var address = new Address(
-                request.Customer.Address.Street,
-                request.Customer.Address.Number,
-                request.Customer.Address.Complement,
-                request.Customer.Address.District,
-                request.Customer.Address.City,
-                request.Customer.Address.State,
-                request.Customer.Address.PostalCode,
-                request.Customer.Address.Country
-            );*/
-
             var customer = new Customer(
-                request.Customer.Name,
-                request.Customer.Email,
-                request.Customer.Phone
-            );
+               request.Customer.Name,
+               request.Customer.Email,
+               request.Customer.Phone
+           );
 
-            //customer.AddAddress(address);
-            customer.SetPassword(request.Customer.Password);
+            if (request.Customer.Address is not null)
+            {
+                var address = new Address(
+                    request.Customer.Address.Street,
+                    request.Customer.Address.Number,
+                    request.Customer.Address.Complement,
+                    request.Customer.Address.District,
+                    request.Customer.Address.City,
+                    request.Customer.Address.State,
+                    request.Customer.Address.PostalCode,
+                    request.Customer.Address.Country
+                );
+
+                address.AddCustomer(customer);
+            }
+
             customer.SetCreatedInKeycloakFalse();
 
             if (!customer.IsValid(Notifications) || TheareErrors())
@@ -73,19 +76,14 @@ namespace Mshop.Application.Commands.Handlers
                 customer.Name,
                 customer.Email,
                 customer.Phone,
-                //customer.Address.Street,
-                //customer.Address.Number,
-                //customer.Address.Complement,
-                //customer.Address.District,
-                //customer.Address.City,
-                //customer.Address.State,
-                //customer.Address.PostalCode,
-                //customer.Address.Country,
                 customer.Password,
                 customer.Id
             ));
 
-            //await _addressRepository.Create(customer.Address,cancellationToken);
+            if(customer.Address is not null)
+                await _addressRepository.Create(customer.Address, cancellationToken);
+
+
             await _customerRepository.Create(customer, cancellationToken);
             await _unitOfWork.CommitAsync(cancellationToken);
 

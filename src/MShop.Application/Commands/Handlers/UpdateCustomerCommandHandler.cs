@@ -1,11 +1,11 @@
 using MediatR;
-using Mshop.Core.Base;
-using Message = Mshop.Core.Message;
+using MShop.Core.Base;
+using Message = MShop.Core.Message;
 using MShop.Domain.Entities;
-using Mshop.Infra.Data.Interface;
-using Mshop.Core.Data;
+using MShop.Infra.Data.Interface;
+using MShop.Core.Data;
 
-namespace Mshop.Application.Commands.Handlers
+namespace MShop.Application.Commands.Handlers
 {
     public class UpdateCustomerCommandHandler : BaseCommand, IRequestHandler<UpdateCustomerCommand, bool>
     {

@@ -1,14 +1,9 @@
-using Xunit;
 using Moq;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Mshop.Application.Commands.Handlers;
-using Mshop.Application.Commands;
-using MShop.Domain.Entities;
-using Mshop.Infra.Data.Interface;
-using Mshop.Core.Message;
-using Mshop.Core.Data;
+using MShop.Application.Commands;
+using MShop.Application.Commands.Handlers;
+using MShop.Core.Data;
+using MShop.Core.Message;
+using MShop.Infra.Data.Interface;
 using MShop.UnitTest.Application.Commands.Common;
 
 namespace MShop.UnitTest.Application.Commands.UpdateCustomer
@@ -43,7 +38,7 @@ namespace MShop.UnitTest.Application.Commands.UpdateCustomer
 
         protected UpdateCustomerCommand RequestCommandValid(Guid customerId)
         {
-            var dto = new Mshop.Application.Dtos.UpdateCustomerDto
+            var dto = new MShop.Application.Dtos.UpdateCustomerDto
             {
                 Id = customerId,
                 Name = "Cliente Atualizado",
@@ -56,7 +51,7 @@ namespace MShop.UnitTest.Application.Commands.UpdateCustomer
         protected UpdateCustomerCommand RequestCommandIsNotValid()
         {
             var customer = _customerFaker.Generate();
-            var customerDto = new Mshop.Application.Dtos.UpdateCustomerDto
+            var customerDto = new MShop.Application.Dtos.UpdateCustomerDto
             {
                 Name = "",
                 Email = "",

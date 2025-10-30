@@ -1,7 +1,7 @@
 using MShop.Domain.Entities;
-using Mshop.Core.Data;
+using MShop.Core.Data;
 
-namespace Mshop.Infra.Data.Interface
+namespace MShop.Infra.Data.Interface
 {
     public interface ICustomerRepository : IRepository<Customer>
     {

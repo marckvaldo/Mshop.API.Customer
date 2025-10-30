@@ -1,12 +1,12 @@
 ﻿using Asp.Versioning;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Mshop.Application.Commands;
-using Mshop.Application.Dtos;
-using Mshop.Application.Queries;
-using Mshop.Core.DomainObject;
+using MShop.Application.Commands;
+using MShop.Application.Dtos;
+using MShop.Application.Queries;
+using MShop.Core.DomainObject;
 using System.Runtime.InteropServices;
-using Message = Mshop.Core.Message;
+using Message = MShop.Core.Message;
 
 namespace MShop.API.Customer.Controllers.v1
 {
@@ -69,7 +69,7 @@ namespace MShop.API.Customer.Controllers.v1
             return CustomResponse(result);
         }
 
-        [HttpPut]
+        [HttpPut("{id:guid}")]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<bool>> UpdateCustomer(Guid id, [FromBody] UpdateCustomerCommand command, CancellationToken cancellation)

@@ -1,12 +1,12 @@
 using MediatR;
-using Mshop.Core.Base;
-using Message = Mshop.Core.Message;
+using MShop.Core.Base;
+using Message = MShop.Core.Message;
 using MShop.Domain.Entities;
 using MShop.Domain.ValueObjects;
-using Mshop.Infra.Data.Interface;
-using Mshop.Core.Data;
+using MShop.Infra.Data.Interface;
+using MShop.Core.Data;
 
-namespace Mshop.Application.Commands.Handlers
+namespace MShop.Application.Commands.Handlers
 {
     public class AddAddressCommandHandler : BaseCommand, IRequestHandler<AddAddressCommand, bool>
     {
@@ -35,31 +35,23 @@ namespace Mshop.Application.Commands.Handlers
                 return false;
             }
 
-            var hasAddress =  await _addressRepository.GetById(customer.AddressId);
-            if (hasAddress is not null)
-            {
-                Notificar("Cliente já tem Endereço!");
-                return false;
-            }
-
             var address = new Address(
-                request.Address.Address.Street,
-                request.Address.Address.Number,
-                request.Address.Address.Complement,
-                request.Address.Address.District,
-                request.Address.Address.City,
-                request.Address.Address.State,
-                request.Address.Address.PostalCode,
-                request.Address.Address.Country
+                request.Address.Street,
+                request.Address.Number,
+                request.Address.Complement,
+                request.Address.District,
+                request.Address.City,
+                request.Address.State,
+                request.Address.PostalCode,
+                request.Address.Country
             );
-           
-            customer.AddAddress(address);
+           address.AddCustomer(customer);
 
-            if (!customer.IsValid(Notifications) || TheareErrors())
+            if (!address.IsValid(Notifications) || TheareErrors())
                 return false;
 
             await _addressRepository.Create(address, cancellationToken);
-            await _customerRepository.Update(customer, cancellationToken);
+            //await _customerRepository.Update(customer, cancellationToken);
             await _unitOfWork.CommitAsync(cancellationToken);
 
             return true;
