@@ -20,13 +20,13 @@ namespace MShop.E2ETest.API.Address
 {
     [Collection("API Address Collection")]
     [CollectionDefinition("API Address Collection", DisableParallelization = true)]
-    public class AddAddresAPITest : AddressAPITestFixture
+    public class AddressAPITest : AddressAPITestFixture
     {
         private IAddressRepository _addressRepository;
         private ICustomerRepository _customerRepository;
         private IUnitOfWork _unitOfWork;
        
-        public AddAddresAPITest() : base()
+        public AddressAPITest() : base()
         {
             _addressRepository = _serviceProvider.GetRequiredService<IAddressRepository>();
             _unitOfWork = _serviceProvider.GetRequiredService<IUnitOfWork>();
