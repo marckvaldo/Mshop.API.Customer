@@ -6,6 +6,11 @@ src/MShop.Application/.vs/
 src/Mshop.Application/bin/
 src/Mshop.Application/obj/
 
+src/MShop.API.GraphQL/.vs/
+src/MShop.API.GraphQL/bin/
+src/MShop.API.GraphQL/obj/
+
+
 src/MShop.Broker.Cart/.vs/
 src/MShop.Broker.Cart/bin/
 src/MShop.Broker.Cart/obj/
