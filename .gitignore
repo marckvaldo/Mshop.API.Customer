@@ -48,6 +48,10 @@ tests/Mshop.E2ETests/.vs/
 tests/Mshop.E2ETests/bin/
 tests/Mshop.E2ETests/obj/
 
+tests/MShop.E2ETest/MShop.E2ETest/.vs/
+tests/MShop.E2ETest/MShop.E2ETest/bin/
+tests/MShop.E2ETest/MShop.E2ETest/obj/
+
 
 
 
