@@ -25,6 +25,11 @@ namespace MShop.E2ETest.GraphQL.Common
         public CustomerGraphQL CustomerByEmail { get; set; }
     }
 
+    public class AddressByIdResponse
+    {
+        public AddressGraphQL addressById { get; set; }
+    }
+
     public class CustomerGraphQL
     {
         public string Name { get; set; }

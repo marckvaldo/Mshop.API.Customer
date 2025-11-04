@@ -1,3 +1,4 @@
+using MShop.API.GraphQL.GraphQL.Address;
 using MShop.API.GraphQL.GraphQL.Customer;
 using MShop.Application;
 using MShop.Infra.Data;
@@ -14,7 +15,8 @@ builder.Services.AddDataBaseAndRepository(builder.Configuration)
     .AddHandlers()
     .AddGraphQLServer()
     .AddQueryType()
-    .AddTypeExtension<CustomerQueries>();
+    .AddTypeExtension<CustomerQueries>()
+    .AddTypeExtension<AddressQueries>();
 
 
 var app = builder.Build();
