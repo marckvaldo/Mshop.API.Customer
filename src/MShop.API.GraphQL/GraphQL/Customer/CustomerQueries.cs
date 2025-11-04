@@ -71,10 +71,10 @@ namespace MShop.API.GraphQL.GraphQL.Customer
         public async Task<CustomerPayload> GetCustomerByEmail(
             [Service] IMediator mediator,
             [Service] Notification.INotification notification,
-            string name,
+            string email,
             CancellationToken cancellationToken)
         {
-            var requestCustomer = new GetCustomerByEmailQuery(name);
+            var requestCustomer = new GetCustomerByEmailQuery(email);
             var outPutCustomer = await mediator.Send(requestCustomer, cancellationToken);
 
             RequestIsValid(notification);

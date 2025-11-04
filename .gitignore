@@ -1,6 +1,6 @@
 src/MShop.API.Customer/.vs/
 src/MShop.API.Customer/bin/
-src/MShop.API.Consumer/obj/
+src/MShop.API.Customer/obj/
 
 src/MShop.Application/.vs/
 src/Mshop.Application/bin/

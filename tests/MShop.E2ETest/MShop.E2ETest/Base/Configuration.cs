@@ -13,6 +13,6 @@ namespace MShop.E2ETest.Base
         public static string URL_API_ADDRESS = "/api/v1/address/";
         public static bool DATABASE_MEMORY = false;
 
-        public static string URI_GRAPHQL = "http://localhost:5000/graphql";
+        public static string URI_GRAPHQL = "https://localhost:7210/graphql";
     }
 }

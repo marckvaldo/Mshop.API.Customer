@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\MShop.API.Customer\MShop.API.Customer.csproj" />
+    <ProjectReference Include="..\..\src\MShop.API.GraphQL\MShop.API.GraphQL.csproj" />
     <ProjectReference Include="..\..\src\MShop.Domain\MShop.Domain.csproj" />
   </ItemGroup>
 

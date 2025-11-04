@@ -4,6 +4,7 @@ using MShop.Application.Commands;
 using MShop.Application.Queries;
 using MShop.Core.DomainObject;
 using MShop.Domain.Entities;
+using MShop.E2ETest.Base;
 using MShop.E2ETest.Common;
 using MShop.Infra.Data.Context;
 using System;
@@ -17,7 +18,7 @@ namespace MShop.E2ETest.API.Address
     public class AddressAPITestFixture : BaseFixture
     {
         protected MshopDbContext _dbContext;
-        public AddressAPITestFixture() : base()
+        public AddressAPITestFixture(TypeProject typeProdject = TypeProject.Http) : base(typeProdject)
         {
             _dbContext = _serviceProvider.GetRequiredService<MshopDbContext>();
         }

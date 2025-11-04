@@ -12,14 +12,19 @@ namespace MShop.E2ETest.Base
     public class BaseWebApplication 
     {
         protected CustomerWebApplicationFactory<MShop.API.Customer.Program> _webAPI;
+        protected CustomerWebApplicationFactory<MShop.API.GraphQL.Program> _GraphQL;
         protected IServiceProvider _serviceProvider;
         protected HttpClient _httpClient;
         protected APIClient _apiClient;
+        protected GraphQLClient _apiClientGraphQL;
 
-        protected BaseWebApplication(TypeProject typeProject = TypeProject.Http)
+        protected BaseWebApplication(TypeProject typeProject)
         {
             if(typeProject == TypeProject.Http)
                 BuildWebApplication();
+
+            if(typeProject == TypeProject.GraphQL)
+                BuildWebApplicationGraphQL();
 
         }
 
@@ -29,6 +34,15 @@ namespace MShop.E2ETest.Base
             _serviceProvider = _webAPI.Services.GetRequiredService<IServiceProvider>();
             _httpClient = _webAPI.CreateClient();
             _apiClient = new APIClient(_httpClient);
+
+        }
+
+        protected async Task BuildWebApplicationGraphQL()
+        {
+            _GraphQL = new CustomerWebApplicationFactory<MShop.API.GraphQL.Program>();
+            _serviceProvider = _GraphQL.Services.GetRequiredService<IServiceProvider>();
+            _httpClient = _GraphQL.CreateClient();
+            _apiClientGraphQL = new GraphQLClient(_httpClient);
 
         }
     }

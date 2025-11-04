@@ -15,7 +15,7 @@ namespace MShop.E2ETest.Common
     {
         protected CustomerFaker _customerFaker;
         protected AddressFaker _addressFaker;
-        public BaseFixture() :base()
+        public BaseFixture(TypeProject typeProduject) :base(typeProduject)
         {
             _customerFaker = new CustomerFaker();
             _addressFaker = new AddressFaker();

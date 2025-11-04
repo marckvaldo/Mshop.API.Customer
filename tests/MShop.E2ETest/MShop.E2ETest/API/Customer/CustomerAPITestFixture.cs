@@ -11,7 +11,7 @@ namespace MShop.E2ETest.API.Customer
     public class CustomerAPITestFixture : BaseFixture
     {
         
-        public CustomerAPITestFixture() : base() 
+        public CustomerAPITestFixture( TypeProject typeProject = TypeProject.Http) : base(typeProject) 
         {
 
         }

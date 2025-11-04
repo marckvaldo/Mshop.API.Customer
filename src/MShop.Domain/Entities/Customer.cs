@@ -28,7 +28,7 @@ namespace MShop.Domain.Entities
         public bool AddAddress(Address address)
         {
             Address = address;
-            //AddressId = address.Id;
+            address.AddCustomer(this);
             return true;
         }
 
