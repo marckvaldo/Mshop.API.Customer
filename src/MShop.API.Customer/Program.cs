@@ -5,14 +5,18 @@ using MShop.Infra.Keycloak;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.UseDefaultServiceProvider(options =>
+{
+    options.ValidateScopes = builder.Environment.IsDevelopment();
+    options.ValidateOnBuild = builder.Environment.IsDevelopment();
+});
+
 // Add services to the container.
-
-//builder.Services.AddControllers();
-
 builder.Services.AddConfigurationController()
     .AddConfigurationSwagger()
     .AddConfigurationModelState()
     .AddDataBaseAndRepository(builder.Configuration)
+    //.AddCacheAndDistributedLock(builder.Configuration)
     .AddKeycloakServices(builder.Configuration)
     .AddConfigurationHealthChecks()
     .AddHandlers();

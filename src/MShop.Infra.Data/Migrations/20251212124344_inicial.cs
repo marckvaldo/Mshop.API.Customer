@@ -56,7 +56,8 @@ namespace MShop.Infra.Data.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Password = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    CreatedInKeycloak = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    ProdiverIdentityId = table.Column<string>(type: "Varchar(100)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {

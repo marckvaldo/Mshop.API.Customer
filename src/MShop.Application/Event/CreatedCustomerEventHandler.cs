@@ -1,32 +1,30 @@
-using MShop.Core;
 using MShop.Core.Message;
 using MShop.Core.Message.DomainEvent;
-using MShop.Infra.Data.Interface;
 using MShop.Domain.Event;
+using MShop.Infra.Data.Interface;
 using MShop.Infra.Keycloak.Interfaces;
-using System.Threading;
 
 namespace MShop.Application.Event
 {
     public class CreatedCustomerEventHandler : IDomainEventHandler<CreatedCustomerEvent>
     {
-        private readonly INotification _notification;
-        private readonly IKeycloakService _keycloakService;
-        private readonly ICustomerRepository _customerRepository;
+        //private readonly INotification _notification;
+        private readonly IIdentityProviderService _IdentityProviderService;
+        //private readonly ICustomerRepository _customerRepository;
 
         public CreatedCustomerEventHandler(
-            INotification notification, 
-            IKeycloakService keycloakUserService, 
-            ICustomerRepository customerRepository)
+            //INotification notification, 
+            IIdentityProviderService IdentityProviderService)
+            //ICustomerRepository customerRepository)
         {
-            _notification = notification;
-            _keycloakService = keycloakUserService;
-            _customerRepository = customerRepository;
+            //_notification = notification;
+            _IdentityProviderService = IdentityProviderService;
+            //_customerRepository = customerRepository;
         }
 
         public async Task<bool> HandlerAsync(CreatedCustomerEvent domainEvent, CancellationToken cancellationToken)
         {
-            var customer = await _customerRepository.GetById(domainEvent.CustomerId);
+            /*var customer = await _customerRepository.GetById(domainEvent.CustomerId);
 
             if (customer is null)
             {
@@ -34,20 +32,25 @@ namespace MShop.Application.Event
                 return false;
             }
 
-            var result = await _keycloakService.CreateUserAsync(
+            var result = await _IdentityProviderService.CreateUserAsync(
+                new Infra.Keycloak.DTOs.RequestUsers(
                 domainEvent.Name,
                 domainEvent.Email,
                 domainEvent.Phone,
-                domainEvent.Password,
+                domainEvent.Password),
                 cancellationToken: default
             );
 
-            if (!result)
-                return false;
 
 
-            customer.SetCreatedInKeycloakTrue();
-            await _customerRepository.Update(customer, cancellationToken);
+            if (Guid.Empty != result)
+            {
+                await _IdentityProviderService.SendEmailVerifyAsync(result, cancellationToken);
+                customer.SetProviderIdentityId(result);
+            }
+
+            await _customerRepository.Update(customer, cancellationToken);*/
+
             return true;
         }
     }

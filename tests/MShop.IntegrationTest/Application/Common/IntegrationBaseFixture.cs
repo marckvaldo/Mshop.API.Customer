@@ -45,10 +45,11 @@ namespace MShop.IntegrationTest.Application.Common
                 {"ConnectionStrings:RepositoryMysql", "Server=localhost;Port=3308;Database=mshopCustomer;User id=mshop;Password=mshop;Convert Zero Datetime=True"},
                 {"ConfigCrypto:SecretKey", "marckvaldowallas"},
                 {"ConfigCrypto:SecretIV", "marckvaldowallas"},
-                {"Keycloak:AuthServerUrl", "http://keycloak-dev:8080/auth"},
-                {"Keycloak:Realm", "mshop"},
-                {"Keycloak:ClientId", "mshop-customer"},
-                {"Keycloak:ClientSecret", "mshop-customer"},
+                {"Keycloak:AuthServerUrl", "http://localhost:8080/realms"},
+                {"Keycloak:Realm", "dev"},
+                {"Keycloak:ClientId", "mshop-client-application"},
+                {"Keycloak:ClientSecret", "6KSPb7XjAqNgkZpsWA0KQoFoRowtp9r8"},
+                {"Keycloak:GroupName", "Customer"},
 
             };
 

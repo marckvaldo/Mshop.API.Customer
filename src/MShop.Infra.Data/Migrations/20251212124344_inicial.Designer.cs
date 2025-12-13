@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MShop.Infra.Data.Migrations
 {
     [DbContext(typeof(MshopDbContext))]
-    [Migration("20251017140630_inicial")]
+    [Migration("20251212124344_inicial")]
     partial class inicial
     {
         /// <inheritdoc />
@@ -31,9 +31,6 @@ namespace MShop.Infra.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<bool>("CreatedInKeycloak")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
@@ -49,6 +46,10 @@ namespace MShop.Infra.Data.Migrations
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("varchar(20)");
+
+                    b.Property<string>("ProdiverIdentityId")
+                        .IsRequired()
+                        .HasColumnType("Varchar(100)");
 
                     b.HasKey("Id");
 

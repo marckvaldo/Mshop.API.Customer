@@ -1,111 +1,173 @@
-using MShop.Core.Message;
 using MShop.Infra.Keycloak.Config;
+using MShop.Infra.Keycloak.DTOs;
 using MShop.Infra.Keycloak.Interfaces;
-using System.Net.Http.Headers;
+using System.Net;
 using System.Text;
 using System.Text.Json;
 
 namespace MShop.Infra.Keycloak.Services
 {
-    public class KeycloakService : IKeycloakService
+    public class KeycloakService : IIdentityProviderService
     {
         private readonly HttpClient _httpClient;
         private readonly KeycloakSettings _settings;
-        private INotification _notification;
 
-        public KeycloakService(INotification notification, HttpClient httpClient, KeycloakSettings settings)
+        public KeycloakService(
+            HttpClient httpClient,            
+            KeycloakSettings settings)
         {
             _httpClient = httpClient;
-            _settings = settings;
-            _notification = notification;
+            _settings = settings;;
         }
 
-        public async Task<bool> CreateUserAsync(
-            string name,
-            string email,
-            string phone,
-            string password,
-            CancellationToken cancellationToken = default)
+        public async Task<string?> CreateUserAsync( RequestUsers request, CancellationToken cancellationToken)
         {
-            try
-            {
-                var token = await GetKeycloakTokenAsync(cancellationToken);
-                if (string.IsNullOrEmpty(token))
-                    return false;
+            var url = $"/admin/realms/{_settings.Realm}/users";
 
-                var userPayload = new
+            var userPayload = new
+            {
+                username = request.email,
+                email = request.email,
+                enabled = true,
+                firstName = request.name,
+                emailVerified = false,
+                attributes = new
                 {
-                    username = email,
-                    email = email,
-                    enabled = true,
-                    firstName = name,
-                    attributes = new
-                    {
-                        phone = new[] { phone }
-                    },
-                    credentials = new[]
-                    {
-                        new {
-                            type = "password",
-                            value = password,
-                            temporary = false
-                        }
+                    phone = new[] { request.phone }
+                },
+                credentials = new[]
+                {
+                    new {
+                        type = "password",
+                        value = request.password,
+                        temporary = false
                     }
-                };
-
-                var json = JsonSerializer.Serialize(userPayload);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-                var url = $"{_settings.AuthServerUrl}/admin/realms/{_settings.Realm}/users";
-                var response = await _httpClient.PostAsync(url, content, cancellationToken);
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    var error = await response.Content.ReadAsStringAsync(cancellationToken);
-                    //_notification.AddNotifications($"Erro ao cadastrar usuário no Keycloak: {error}");
-                    _notification.AddNotifications($"Seu usuario foi criado com sucesso! mais por enquanto não é possível você fazer o login! Aguarde mais alguns instantes.");
-                    return false;
                 }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                //_notification.AddNotifications($"Erro ao cadastrar usuário no Keycloak: {ex.Message}");
-                _notification.AddNotifications($"Seu usuario foi criado com sucesso! mais por enquanto não é possível você fazer o login! Aguarde mais alguns instantes.");
-                return false;
-            }
-        }
-
-        private async Task<string?> GetKeycloakTokenAsync(CancellationToken cancellationToken)
-        {
-            var tokenUrl = $"{_settings.AuthServerUrl}/realms/{_settings.Realm}/protocol/openid-connect/token";
-            var parameters = new Dictionary<string, string>
-            {
-                { "client_id", _settings.ClientId },
-                { "client_secret", _settings.ClientSecret },
-                { "grant_type", "client_credentials" }
             };
 
-            var content = new FormUrlEncodedContent(parameters);
-            var response = await _httpClient.PostAsync(tokenUrl, content, cancellationToken);
+            var json = JsonSerializer.Serialize(userPayload);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync(url, content, cancellationToken);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                if (response.StatusCode == HttpStatusCode.Conflict)
+                {
+                    throw new Exception("Usuario já cadastrado com esse e-email");
+                }
+
+                var error = await response.Content.ReadAsStringAsync(cancellationToken);
+                throw new Exception(error);
+            }
+
+            var userId = string.Empty;
+            if (response.StatusCode == HttpStatusCode.Created)
+            {
+                if (response.Headers.TryGetValues("Location", out var values))
+                {
+                    var location = values.FirstOrDefault();
+                    if (!string.IsNullOrEmpty(location))
+                    {
+                        userId = location.Substring(location.LastIndexOf('/') + 1);
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return null;
+            }
+            
+            await AddGroupUserAsync(userId, cancellationToken);
+
+            return userId;
+        }
+        public async Task<bool> SendEmailVerifyAsync(string userId, CancellationToken cancellationToken)
+        {
+           
+            var sendEmailUrl = $"{_settings.AuthServerUrl}/admin/realms/{_settings.Realm}/users/{userId}/execute-actions-email";
+            var payload = new[] { "VERIFY_EMAIL" };
+
+            var json = JsonSerializer.Serialize(payload);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PutAsync(sendEmailUrl, content, cancellationToken);
 
             if (!response.IsSuccessStatusCode)
             {
                 var error = await response.Content.ReadAsStringAsync(cancellationToken);
-                _notification.AddNotifications($"Erro ao obter token do Keycloak: {error}");
-                return null;
+                throw new Exception(error);
             }
 
-            var json = await response.Content.ReadAsStringAsync(cancellationToken);
-            using var doc = JsonDocument.Parse(json);
-            if (doc.RootElement.TryGetProperty("access_token", out var tokenElement))
-                return tokenElement.GetString();
-
-            _notification.AddNotifications("Token de acesso não encontrado na resposta do Keycloak.");
-            return null;
+            return true;            
         }
+        private async Task<bool> AddGroupUserAsync(string userId, CancellationToken cancellationToken)
+        {
+            var groupId = await GetGroupNameAsync(_settings.GroupName, cancellationToken);
+            if (groupId == null)
+                throw new Exception($"Não foi possivel localizar um grupo com o nome {_settings.GroupName}");
+
+            var addGrouplUrl = $"{_settings.AuthServerUrl}/admin/realms/{_settings.Realm}/users/{userId}/groups/{groupId}";
+                
+            var content = new StringContent("", Encoding.UTF8, "application/json");
+            var response = await _httpClient.PutAsync(addGrouplUrl, content, cancellationToken);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var error = await response.Content.ReadAsStringAsync(cancellationToken);
+                throw new Exception(error);
+            }
+
+            return true;
+        }
+        private async Task<string?> GetGroupNameAsync(string groupName, CancellationToken cancellationToken)
+        {
+            var addGrouplUrl = $"{_settings.AuthServerUrl}/admin/realms/{_settings.Realm}/groups?search={groupName}";
+            var response = await _httpClient.GetAsync(addGrouplUrl, cancellationToken);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var error = await response.Content.ReadAsStringAsync(cancellationToken);
+                throw new Exception(error);
+            }
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            var json = await response.Content.ReadAsStringAsync();
+            var groups = JsonSerializer.Deserialize<List<KeycloakGroup>>(json, options);
+            var group = groups?.FirstOrDefault(g => g.Name.Equals(groupName, StringComparison.OrdinalIgnoreCase));
+
+            if (group is null)
+                return null;
+           
+            return group.Id;
+
+        } 
+        public async Task<List<ResultUser>?> GetUserByEmailAsync(string email, CancellationToken cancellationToken)
+        {
+            var addGrouplUrl = $"{_settings.AuthServerUrl}/admin/realms/{_settings.Realm}/users?search={email}";
+            var response = await _httpClient.GetAsync(addGrouplUrl, cancellationToken);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var error = await response.Content.ReadAsStringAsync(cancellationToken);
+                throw new Exception(error);
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var users = JsonSerializer.Deserialize<List<ResultUser>>(json);
+
+            return users;
+        }
+        
+
+    }
+
+    public class KeycloakGroup
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
     }
 }

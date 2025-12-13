@@ -28,7 +28,7 @@ namespace MShop.Application.Commands.Handlers
 
         public async Task<bool> Handle(AddAddressCommand request, CancellationToken cancellationToken)
         {
-            var customer = await _customerRepository.GetById(request.Address.CustomerId);
+            var customer = await _customerRepository.GetById(request.CustomerId);
             if (customer == null)
             {
                 Notificar("Customer não encontrado.");

@@ -8,6 +8,8 @@ using MShop.Domain.Event;
 using MShop.Domain.ValueObjects;
 using MShop.Infra.Data.Interface;
 using Message = MShop.Core.Message;
+using MShop.Infra.Keycloak.Interfaces;
+using Polly.CircuitBreaker;
 
 namespace MShop.Application.Commands.Handlers
 {
@@ -15,21 +17,24 @@ namespace MShop.Application.Commands.Handlers
     {
         private readonly ICustomerRepository _customerRepository;
         private readonly IAddressRepository _addressRepository;
-        private readonly ICryptoService _cryptoService;
+        //private readonly ICryptoService _cryptoService;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IIdentityProviderService _identityProviderService;
 
         public CreateCustomerCommandHandler(
-            ICryptoService cryptoService,
+            //ICryptoService cryptoService,
             ICustomerRepository customerRepository,
             IAddressRepository address,
             IUnitOfWork unitOfWork,
-            Message.INotification notification
+            Message.INotification notification,
+            IIdentityProviderService identityProviderService
         ) : base(notification)
         {
-            _cryptoService = cryptoService;
+            //_cryptoService = cryptoService;
             _customerRepository = customerRepository;
             _addressRepository = address;
             _unitOfWork = unitOfWork;
+            _identityProviderService = identityProviderService;
         }
 
         public async Task<bool> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
@@ -38,7 +43,7 @@ namespace MShop.Application.Commands.Handlers
             var existing = await _customerRepository.Filter(c => c.Email == request.Customer.Email);
             if (existing.Any())
             {
-                Notificar("O customer já está cadastrado.");
+                Notificar("Usuario já está cadastrado para esse email");
                 return false;
             }
 
@@ -46,7 +51,7 @@ namespace MShop.Application.Commands.Handlers
                request.Customer.Name,
                request.Customer.Email,
                request.Customer.Phone
-           );
+            );
 
             if (request.Customer.Address is not null)
             {
@@ -64,30 +69,55 @@ namespace MShop.Application.Commands.Handlers
                 address.AddCustomer(customer);
             }
 
-            customer.SetCreatedInKeycloakFalse();
-
             if (!customer.IsValid(Notifications) || TheareErrors())
                 return false;
 
-            customer.SetPassword(_cryptoService.Encrypt(request.Customer.Password));
+            customer.SetPassword("-");
 
             // Adiciona evento de domínio
-            customer.RegisterEvent(new CreatedCustomerEvent(
+            /*customer.RegisterEvent(new CreatedCustomerEvent(
                 customer.Name,
                 customer.Email,
                 customer.Phone,
                 customer.Password,
                 customer.Id
-            ));
+            ));*/
 
-            if(customer.Address is not null)
-                await _addressRepository.Create(customer.Address, cancellationToken);
+            try
+            {
+                var resulUserId = await _identityProviderService.CreateUserAsync(
+                                    new Infra.Keycloak.DTOs.RequestUsers(
+                                        customer.Name,
+                                        customer.Email,
+                                        customer.Phone,
+                                        request.Customer.Password)
+                                    );
+
+                if (resulUserId is not null)
+                {
+                    customer.SetProviderIdentityId(resulUserId);
+
+                    if (customer.Address is not null)
+                        await _addressRepository.Create(customer.Address, cancellationToken);
 
 
-            await _customerRepository.Create(customer, cancellationToken);
-            await _unitOfWork.CommitAsync(cancellationToken);
+                    await _customerRepository.Create(customer, cancellationToken);
+                    await _unitOfWork.CommitAsync(cancellationToken);
 
-            return true;
+                    await _identityProviderService.SendEmailVerifyAsync(resulUserId, cancellationToken);
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Notificar(ex.Message);
+            }
+
+            //Notificar("Não foi possivel cadastra o usuario");
+            return false;
+
+           
         }
     }
 }

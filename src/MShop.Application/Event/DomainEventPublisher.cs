@@ -8,21 +8,22 @@ namespace MShop.Application.Event
     public class DomainEventPublisher : IDomainEventPublisher
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly Message.INotification _notification;
+        //private readonly Message.INotification _notification;
 
-        public DomainEventPublisher(IServiceProvider serviceProvider, Message.INotification notification)
+        public DomainEventPublisher(IServiceProvider serviceProvider /*Message.INotification notification*/)
         {
             _serviceProvider = serviceProvider;
-            _notification = notification;
+            //_notification = notification;
         }
 
         public async Task<bool> PublishAsync<TDomainEvent>(TDomainEvent @event, CancellationToken cancellationToken) where TDomainEvent : DomainEvent
         {
+            //using var scope = _serviceProvider.CreateScope();
             var handlerType = _serviceProvider.GetServices<IDomainEventHandler<TDomainEvent>>();
 
             if (handlerType is null || !handlerType.Any())
             {
-                _notification.AddNotifications($"Handler not found in {@event}");
+                //_notification.AddNotifications($"Handler not found in {@event}");
                 return false;
             }
 

@@ -13,10 +13,8 @@ namespace MShop.Domain.Entities
         public string Email { get; private set; }
         public string Phone { get; private set; }
         public string? Password { get; private set; }
-        public bool CreatedInKeycloak { get; private set; }
+        public string ProdiverIdentityId { get; private set; }
         public Address? Address { get; private set; }
-
-        //public Guid AddressId { get; private set; }
 
         public Customer(string name, string email, string phone)
         {
@@ -83,16 +81,20 @@ namespace MShop.Domain.Entities
             Password = password;
         }
 
-        public void SetCreatedInKeycloakFalse()
+        /*public void SetCreatedInProviderIdentityFalse()
         {
-            CreatedInKeycloak = false;
+            CreatedInProviderIdentity = false;
         }
 
-        public void SetCreatedInKeycloakTrue()
+        public void SetCreatedInProviderIdentityTrue()
         {
-            CreatedInKeycloak = true;
+            CreatedInProviderIdentity = true;
             Password = null;
-        }
+        }*/
 
+        public void SetProviderIdentityId(string providerId)
+        {
+            ProdiverIdentityId = providerId;
+        }
     }
 }

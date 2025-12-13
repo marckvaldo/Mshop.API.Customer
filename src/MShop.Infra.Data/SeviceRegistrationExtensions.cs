@@ -24,10 +24,10 @@ namespace MShop.Infra.Data
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString),
                 b => b.MigrationsAssembly("MShop.Infra.Data")));
 
+            services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
-            services.AddSingleton<ICryptoService>(options => new CryptoService(configuration));
+            //services.AddSingleton<ICryptoService>(options => new CryptoService(configuration));
 
             return services;
         }

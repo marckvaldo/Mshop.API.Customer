@@ -28,7 +28,7 @@ namespace MShop.Infra.Data.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(255)");
 
-            /*builder.Property(c => c.CreatedInKeycloak)
+            /*builder.Property(c => c.CreatedInProviderIdentity)
                 .IsRequired()
                 .HasColumnType("bool")
                 .HasDefaultValue(false);*/
