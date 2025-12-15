@@ -1,26 +1,32 @@
 using Moq;
 using MShop.Domain.Entities;
+using MShop.Infra.Keycloak.DTOs;
 using System.Linq.Expressions;
 
 namespace MShop.UnitTest.Application.Commands.CreateCustomer
 {
     public class CreateCustomerCommandHandlerTests : CreateCustomerCommandHandlerTestsFixture
     {
-       
+
+        public CreateCustomerCommandHandlerTests() :base()
+        {
+            
+        }
 
         [Fact]
         public async Task Handle_ShouldReturnTrue_WhenCustomerIsCreatedSuccessfully()
         {
             // Arrange
-           
-
             _customerRepoMock.Setup(r => r.Filter(It.IsAny<System.Linq.Expressions.Expression<Func<Customer, bool>>>()))
                 .ReturnsAsync(new List<Customer>());
 
-            _cryptoServiceMock.Setup(c => c.Encrypt(It.IsAny<string>())).Returns("senha123_encrypted");
+            //_cryptoServiceMock.Setup(c => c.Encrypt(It.IsAny<string>())).Returns("senha123_encrypted");
+            _identityProviderService.Setup(i => i.CreateUserAsync(It.IsAny<RequestUsers>(), CancellationToken.None))
+                .ReturnsAsync("provider-identity-id-123");
+
             _unitOfWorkMock.Setup(u => u.CommitAsync(It.IsAny<CancellationToken>())).Returns(Task.CompletedTask);
 
-            var handler = CreateHandler(_cryptoServiceMock, _customerRepoMock, _addressRepoMock, _unitOfWorkMock, _notificationMock);
+            var handler = CreateHandler(_cryptoServiceMock, _customerRepoMock, _addressRepoMock, _unitOfWorkMock, _notificationMock, _identityProviderService);
             var command = RequestCommandValid();
 
             // Act
@@ -40,7 +46,7 @@ namespace MShop.UnitTest.Application.Commands.CreateCustomer
             var customers = _customerFaker.Generate(10);
             _customerRepoMock.Setup(r => r.Filter(It.IsAny<System.Linq.Expressions.Expression<Func<Customer, bool>>>())).ReturnsAsync(customers);
 
-            var handler = CreateHandler(_cryptoServiceMock, _customerRepoMock, _addressRepoMock, _unitOfWorkMock, _notificationMock);
+            var handler = CreateHandler(_cryptoServiceMock, _customerRepoMock, _addressRepoMock, _unitOfWorkMock, _notificationMock, _identityProviderService);
             var command = RequestCommandValid();
 
             // Act
@@ -62,7 +68,7 @@ namespace MShop.UnitTest.Application.Commands.CreateCustomer
                 .ReturnsAsync(new List<Customer>());
 
 
-            var handler = CreateHandler(_cryptoServiceMock, _customerRepoMock, _addressRepoMock, _unitOfWorkMock, _notificationMock);
+            var handler = CreateHandler(_cryptoServiceMock, _customerRepoMock, _addressRepoMock, _unitOfWorkMock, _notificationMock, _identityProviderService);
             var command = RequestCommandIsNotValid();
 
             // Act
@@ -84,7 +90,7 @@ namespace MShop.UnitTest.Application.Commands.CreateCustomer
             _customerRepoMock.Setup(r => r.Filter(It.IsAny<System.Linq.Expressions.Expression<Func<Customer, bool>>>()))
                 .ThrowsAsync(new Exception("DB error"));
 
-            var handler = CreateHandler(_cryptoServiceMock, _customerRepoMock, _addressRepoMock, _unitOfWorkMock, _notificationMock);
+            var handler = CreateHandler(_cryptoServiceMock, _customerRepoMock, _addressRepoMock, _unitOfWorkMock, _notificationMock, _identityProviderService);
             var command = RequestCommandValid();
 
             // Act & Assert

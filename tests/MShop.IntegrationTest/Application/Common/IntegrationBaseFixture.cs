@@ -3,6 +3,7 @@ using Castle.Core.Resource;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Moq;
 using MShop.Application;
 using MShop.Core.Test.Domain.Entity.Address;
 using MShop.Core.Test.Domain.Entity.Customer;
@@ -10,6 +11,8 @@ using MShop.Domain.Entities;
 using MShop.Infra.Data;
 using MShop.Infra.Data.Context;
 using MShop.Infra.Keycloak;
+using MShop.Infra.Keycloak.DTOs;
+using MShop.Infra.Keycloak.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -45,11 +48,14 @@ namespace MShop.IntegrationTest.Application.Common
                 {"ConnectionStrings:RepositoryMysql", "Server=localhost;Port=3308;Database=mshopCustomer;User id=mshop;Password=mshop;Convert Zero Datetime=True"},
                 {"ConfigCrypto:SecretKey", "marckvaldowallas"},
                 {"ConfigCrypto:SecretIV", "marckvaldowallas"},
-                {"Keycloak:AuthServerUrl", "http://localhost:8080/realms"},
+                {"Keycloak:AuthServerUrl", "http://localhost:8080"},
                 {"Keycloak:Realm", "dev"},
                 {"Keycloak:ClientId", "mshop-client-application"},
                 {"Keycloak:ClientSecret", "6KSPb7XjAqNgkZpsWA0KQoFoRowtp9r8"},
-                {"Keycloak:GroupName", "Customer"},
+                {"Keycloak:GroupName", "customer"},
+                {"Redis:Endpoint", "localhost:8378"},
+                {"Redis:Password", ""},
+                {"Redis:User", ""},
 
             };
 
@@ -58,8 +64,31 @@ namespace MShop.IntegrationTest.Application.Common
                 .Build();
 
             service.AddDataBaseAndRepository(configuration)
-                .AddKeycloakServices(configuration)
+                //.AddKeycloakServices(configuration)
+                .AddCacheAndDistributedLock(configuration)
                 .AddHandlers();
+
+            service.AddScoped<IIdentityTokenProviderService>(_ =>
+            {
+                var mock = new Mock<IIdentityTokenProviderService>();
+
+                mock
+                    .Setup(x => x.GetTokenAsync(It.IsAny<CancellationToken>()))
+                    .ReturnsAsync("fake-jwt-token");
+
+
+               return mock.Object;
+            });
+
+            service.AddScoped<IIdentityProviderService>(_ =>
+            {
+                var mock = new Mock<IIdentityProviderService>();
+                mock
+                    .Setup(x => x.CreateUserAsync(It.IsAny<RequestUsers>(), It.IsAny<CancellationToken>()))
+                    .ReturnsAsync("fake-user-id");
+
+                return mock.Object;
+            });
 
             return service.BuildServiceProvider();
         }

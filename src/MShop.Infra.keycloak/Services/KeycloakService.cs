@@ -161,7 +161,18 @@ namespace MShop.Infra.Keycloak.Services
 
             return users;
         }
-        
+        public async Task<bool> DeleteUserAsync(string userId, CancellationToken cancellationToken)
+        {
+            var deleteUserUrl = $"{_settings.AuthServerUrl}/admin/realms/{_settings.Realm}/users/{userId}";
+            var response = await _httpClient.DeleteAsync(deleteUserUrl, cancellationToken);
+            if (!response.IsSuccessStatusCode)
+            {
+                var error = await response.Content.ReadAsStringAsync(cancellationToken);
+                throw new Exception(error);
+            }
+            return true;
+        }
+
 
     }
 

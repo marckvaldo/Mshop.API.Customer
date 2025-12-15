@@ -83,10 +83,13 @@ namespace MShop.IntegrationTest.Application.Command.UpdateCustomer
         }
 
 
+
+
         private async Task<Customer> CriarCustomer()
         {
             var customer = _customerFaker.Generate();
             customer.SetPassword("password");
+            customer.SetProviderIdentityId(Guid.NewGuid().ToString());
             await _customerRepository.Create(customer, CancellationToken.None);
             await _unitOfWork.CommitAsync();
             DetachedEntity(customer);
@@ -97,6 +100,7 @@ namespace MShop.IntegrationTest.Application.Command.UpdateCustomer
         {
             var customer = new Customer(name, email, phone);
             customer.SetPassword("password");
+            customer.SetProviderIdentityId(Guid.NewGuid().ToString());
             await _customerRepository.Create(customer, CancellationToken.None);
             await _unitOfWork.CommitAsync();
             DetachedEntity(customer);

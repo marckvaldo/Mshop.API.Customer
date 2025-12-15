@@ -57,8 +57,7 @@ namespace MShop.UnitTest.Application.Commands.AddAddress
                 City = "Cidade",
                 State = "ST",
                 PostalCode = "00000-000",
-                Country = "Brasil",
-                CustomerId = customerId
+                Country = "Brasil"
             };
 
             /*var updateDto = new MShop.Application.Dtos.UpdateCustomerAddressDto
@@ -66,7 +65,7 @@ namespace MShop.UnitTest.Application.Commands.AddAddress
                 CustomerId = customerId,
                 Address = addressDto
             };*/
-            return new AddAddressCommand(addressDto);
+            return new AddAddressCommand(addressDto, customerId);
         }
 
         protected AddAddressCommand RequestAddressIsNotValid(Guid customerId)
@@ -80,8 +79,7 @@ namespace MShop.UnitTest.Application.Commands.AddAddress
                 City = "",
                 State = "ST",
                 PostalCode = "00000-000",
-                Country = "Brasil",
-                CustomerId = customerId
+                Country = "Brasil"
             };
 
             /*var updateDto = new MShop.Application.Dtos.UpdateCustomerAddressDto
@@ -89,7 +87,7 @@ namespace MShop.UnitTest.Application.Commands.AddAddress
                 CustomerId = customerId,
                 Address = addressDto
             };*/
-            return new AddAddressCommand(addressDto);
+            return new AddAddressCommand(addressDto, customerId);
         }
     }
 }

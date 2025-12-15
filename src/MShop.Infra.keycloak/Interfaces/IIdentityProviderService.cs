@@ -13,6 +13,7 @@ namespace MShop.Infra.Keycloak.Interfaces
     {
         Task<string?> CreateUserAsync(RequestUsers request, CancellationToken cancellationToken = default);
         Task<bool> SendEmailVerifyAsync(string userId, CancellationToken cancellationToken);
-        Task<List<ResultUser>?> GetUserByEmailAsync(string email, CancellationToken cancellationToken);       
+        Task<List<ResultUser>?> GetUserByEmailAsync(string email, CancellationToken cancellationToken);
+        Task<bool> DeleteUserAsync(string userId, CancellationToken cancellationToken);
     }
 }

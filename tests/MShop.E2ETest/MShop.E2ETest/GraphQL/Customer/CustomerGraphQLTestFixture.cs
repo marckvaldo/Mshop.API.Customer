@@ -27,6 +27,7 @@ namespace MShop.E2ETest.GraphQL.Customer
             {
                 var customerModel = new Domain.Entities.Customer(item.Name, item.Email, item.Phone);
                 customerModel.SetPassword("p@ssw0rd");
+                customerModel.SetProviderIdentityId(Guid.NewGuid().ToString());
                 var addressFake = _addressFaker.Generate();
                 var addressModel = new Domain.ValueObjects.Address(
                     addressFake.Street, 

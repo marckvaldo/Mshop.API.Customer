@@ -83,6 +83,7 @@
             // Arrange
             var customerFaker = _customerFaker.Generate();
             customerFaker.SetPassword("senha123");
+            customerFaker.SetProviderIdentityId(Guid.NewGuid().ToString());
             var command = RequestCommandValid(customerFaker.Email);
             await _customerRepository.Create(customerFaker, CancellationToken.None);
             await _unitOfWork.CommitAsync(CancellationToken.None);

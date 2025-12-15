@@ -1,19 +1,21 @@
 ﻿using Bogus.DataSets;
+using Microsoft.Extensions.DependencyInjection;
 using MShop.Application.Commands;
 using MShop.Core.Test.Domain.Entity.Address;
 using MShop.Core.Test.Domain.Entity.Customer;
 using MShop.E2ETest.Base;
 using MShop.E2ETest.Common;
+using MShop.Infra.Keycloak.Interfaces;
 using DTOs = MShop.Application.Dtos;
 
 namespace MShop.E2ETest.API.Customer
 {
     public class CustomerAPITestFixture : BaseFixture
     {
-        
+        protected IIdentityProviderService _identityProviderService;
         public CustomerAPITestFixture( TypeProject typeProject = TypeProject.Http) : base(typeProject) 
         {
-
+            _identityProviderService = _serviceProvider.GetRequiredService<IIdentityProviderService>();
         }
 
         protected CreateCustomerCommand RequestCreateCustomerValid(string email = null, string name = null, string phone = null, bool address = false)
@@ -26,7 +28,7 @@ namespace MShop.E2ETest.API.Customer
                 Name = name is null ? customer.Name : name,
                 Email = email is null ? customer.Email : email,
                 Phone = phone is null ? customer.Phone : phone,
-                Password = "senha123"
+                Password = "Senha@123"
             };
 
             if (address)

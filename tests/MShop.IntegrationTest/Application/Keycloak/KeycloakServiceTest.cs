@@ -18,17 +18,12 @@ namespace MShop.IntegrationTest.Application.Keycloak
         public async Task RegisterUserInIdentiryProviderShouldReturnSuccess()
         {
             // Arrange
-            var command = RequestCommandValid();
+            var command = RequestCommandvalid();
             // Act
-            var result = await _IdentityProviderService.CreateUserAsync(command.Name, command.Email, command.Phone, command.Password, CancellationToken.None);
+            var result = await _IdentityProviderService.CreateUserAsync(command, CancellationToken.None);
 
             // Assert
-            Assert.True(result);
-            Assert.False(_notification.HasErrors());
-            Assert.NotNull(customer);
-            Assert.Equal(command.Customer.Name, customer.Name);
-            Assert.Equal(command.Customer.Email, customer.Email);
-            Assert.Equal(command.Customer.Phone, customer.Phone);
+            Assert.NotNull(result);
         }
 
     }

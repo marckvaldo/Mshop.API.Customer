@@ -28,6 +28,7 @@ namespace MShop.IntegrationTest.Application.Queries.GetCustomerByEmail
             foreach (var item in listCustomer)
             {
                 item.SetPassword("password");
+                item.SetProviderIdentityId(Guid.NewGuid().ToString());
                 await _customerRepository.Create(item, CancellationToken.None);
             }
             await _unitOfWork.CommitAsync();
@@ -54,6 +55,7 @@ namespace MShop.IntegrationTest.Application.Queries.GetCustomerByEmail
             foreach (var item in listCustomer)
             {
                 item.SetPassword("password");
+                item.SetProviderIdentityId(Guid.NewGuid().ToString());  
                 await _customerRepository.Create(item, CancellationToken.None);
             }
             await _unitOfWork.CommitAsync();

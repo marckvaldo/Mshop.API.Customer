@@ -63,6 +63,7 @@ namespace MShop.IntegrationTest.Application.Command.DeleteAddress
         {
             var customer = GetCustomerFaker();
             customer.SetPassword("Senha@123");
+            customer.SetProviderIdentityId(Guid.NewGuid().ToString());
             if (address != null)
                 customer.AddAddress(address);
 

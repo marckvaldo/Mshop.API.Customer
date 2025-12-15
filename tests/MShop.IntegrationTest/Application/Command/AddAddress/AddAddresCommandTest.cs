@@ -85,6 +85,7 @@ namespace MShop.IntegrationTest.Application.Command.AddAddress
         {
             var customer = GetCustomerFaker();
             customer.SetPassword("Senha@123");
+            customer.SetProviderIdentityId(Guid.NewGuid().ToString());
             await _customerRepository.Create(customer, CancellationToken.None);
             await _unitOfWork.CommitAsync(CancellationToken.None);
             return customer;

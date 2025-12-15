@@ -5,16 +5,10 @@ using MShop.Infra.Keycloak.Config;
 using MShop.Infra.Keycloak.Handlers;
 using MShop.Infra.Keycloak.Interfaces;
 using MShop.Infra.Keycloak.Services;
-using Polly;
 using RedLockNet;
 using RedLockNet.SERedis;
 using RedLockNet.SERedis.Configuration;
 using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MShop.Infra.Keycloak
 {
@@ -25,7 +19,7 @@ namespace MShop.Infra.Keycloak
             
             services.AddSingleton<ICircuitBreaker, CircuitBreaker.CircuitBreaker>();   
 
-            services.AddCacheAndDistributedLock(configuration).GetAwaiter().GetResult();
+            //services.AddCacheAndDistributedLock(configuration).GetAwaiter().GetResult();
 
             services.AddSingleton<KeycloakSettings>(sp =>
             {
@@ -67,7 +61,7 @@ namespace MShop.Infra.Keycloak
             return services;
         }
 
-        public static async Task<IServiceCollection> AddCacheAndDistributedLock(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddCacheAndDistributedLock(this IServiceCollection services, IConfiguration configuration)
         {
             var redisOptions = new ConfigurationOptions
             {

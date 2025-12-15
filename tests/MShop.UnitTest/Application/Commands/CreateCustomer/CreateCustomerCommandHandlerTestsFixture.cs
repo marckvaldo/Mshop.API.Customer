@@ -4,6 +4,7 @@ using MShop.Application.Commands.Handlers;
 using MShop.Core.Data;
 using MShop.Core.Message;
 using MShop.Infra.Data.Interface;
+using MShop.Infra.Keycloak.Interfaces;
 using MShop.UnitTest.Application.Commands.Common;
 
 namespace MShop.UnitTest.Application.Commands.CreateCustomer
@@ -15,6 +16,7 @@ namespace MShop.UnitTest.Application.Commands.CreateCustomer
         protected Mock<IUnitOfWork> _unitOfWorkMock;
         protected INotification _notificationMock;
         protected Mock<ICryptoService> _cryptoServiceMock;
+        protected Mock<IIdentityProviderService> _identityProviderService;
 
         public CreateCustomerCommandHandlerTestsFixture()
         {
@@ -23,6 +25,7 @@ namespace MShop.UnitTest.Application.Commands.CreateCustomer
             _addressRepoMock = new Mock<IAddressRepository>();
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _cryptoServiceMock = new Mock<ICryptoService>();
+            _identityProviderService = new Mock<IIdentityProviderService>();
         }
 
         protected CreateCustomerCommandHandler CreateHandler(
@@ -30,14 +33,15 @@ namespace MShop.UnitTest.Application.Commands.CreateCustomer
             Mock<ICustomerRepository> customerRepoMock,
             Mock<IAddressRepository> addressRepoMock,
             Mock<IUnitOfWork> unitOfWorkMock,
-            INotification notificationMock)
+            INotification notificationMock,
+            Mock<IIdentityProviderService> identityProviderService)
         {
             return new CreateCustomerCommandHandler(
-                cryptoServiceMock.Object,
                 customerRepoMock.Object,
                 addressRepoMock.Object,
                 unitOfWorkMock.Object,
-                notificationMock
+                notificationMock,
+                identityProviderService.Object
             );
         }
 

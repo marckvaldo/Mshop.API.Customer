@@ -40,7 +40,6 @@ namespace MShop.IntegrationTest.Application.Command.AddAddress
                 State = "ST",
                 PostalCode = "00000-000",
                 Country = "Brasil",
-                CustomerId = customerId
             };
 
             /*var updateDto = new MShop.Application.Dtos.UpdateCustomerAddressDto
@@ -48,7 +47,7 @@ namespace MShop.IntegrationTest.Application.Command.AddAddress
                 CustomerId = customerId,
                 Address = addressDto
             };*/
-            return new AddAddressCommand(addressDto);
+            return new AddAddressCommand(addressDto, customerId);
         }
 
         protected AddAddressCommand RequestAddressIsNotValid(Guid customerId)
@@ -70,7 +69,7 @@ namespace MShop.IntegrationTest.Application.Command.AddAddress
                 CustomerId = customerId,
                 Address = addressDto
             };*/
-            return new AddAddressCommand(addressDto);
+            return new AddAddressCommand(addressDto, customerId);
         }
     }
 }

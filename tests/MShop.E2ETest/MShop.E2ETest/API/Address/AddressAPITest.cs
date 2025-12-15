@@ -143,6 +143,7 @@ namespace MShop.E2ETest.API.Address
         {
             var customer = _customerFaker.Generate();
             customer.SetPassword("password");
+            customer.SetProviderIdentityId(Guid.NewGuid().ToString());
             await _customerRepository.Create(customer, CancellationToken.None);
             await _unitOfWork.CommitAsync();
             //DetachedEntity(customer);

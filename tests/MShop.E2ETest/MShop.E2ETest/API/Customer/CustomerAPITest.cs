@@ -31,17 +31,15 @@ namespace MShop.E2ETest.API.Customer
         public async Task CreateCustomer()
         {
             var request = RequestCreateCustomerValid();
-            var (response, outPut) = await _apiClient.Post<CustomResponse<CustomerResultDto>>(Configuration.URL_API_CUSTOMER, request);
+            var (response, outPut) = await _apiClient.Post<CustomResponse<bool>>(Configuration.URL_API_CUSTOMER, request);
 
             Assert.NotNull(request);
             Assert.Equal(System.Net.HttpStatusCode.OK, response?.StatusCode);
             Assert.NotNull(outPut);
             Assert.True(outPut.Success);
-            Assert.Equal(request.Customer.Name, outPut.Data.Name);
-            Assert.Equal(request.Customer.Email, outPut.Data.Email);
-            Assert.Equal(request.Customer.Phone, outPut.Data.Phone);
 
-            var dbCategory = (await _customerRepository.Filter(c => c.Id == outPut.Data.Id)).First();
+            var dbCategory = (await _customerRepository.Filter(c => c.Email == request.Customer.Email)).First();
+            await _identityProviderService.DeleteUserAsync(dbCategory.ProdiverIdentityId, CancellationToken.None);
 
             Assert.NotNull(dbCategory);
             Assert.Equal(dbCategory.Name, request.Customer.Name);
@@ -56,6 +54,7 @@ namespace MShop.E2ETest.API.Customer
         {
             var customer = _customerFaker.Generate();
             customer.SetPassword("password@Php");
+            customer.SetProviderIdentityId(Guid.NewGuid().ToString());
             await _customerRepository.Create(customer, CancellationToken.None);
             await _unitOfWork.CommitAsync(CancellationToken.None);
 
@@ -83,6 +82,7 @@ namespace MShop.E2ETest.API.Customer
         {
             var customer = _customerFaker.Generate();
             customer.SetPassword("password@Php");
+            customer.SetProviderIdentityId(Guid.NewGuid().ToString());
             await _customerRepository.Create(customer, CancellationToken.None);
             await _unitOfWork.CommitAsync(CancellationToken.None);
 
@@ -105,6 +105,7 @@ namespace MShop.E2ETest.API.Customer
         {
             var customer = _customerFaker.Generate();
             customer.SetPassword("password@Php");
+            customer.SetProviderIdentityId(Guid.NewGuid().ToString());
             await _customerRepository.Create(customer, CancellationToken.None);
             await _unitOfWork.CommitAsync(CancellationToken.None);
 
@@ -127,6 +128,7 @@ namespace MShop.E2ETest.API.Customer
         {
             var customer = _customerFaker.Generate();
             customer.SetPassword("password@Php");
+            customer.SetProviderIdentityId(Guid.NewGuid().ToString());
             await _customerRepository.Create(customer, CancellationToken.None);
             await _unitOfWork.CommitAsync(CancellationToken.None);
 

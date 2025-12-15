@@ -35,7 +35,6 @@ namespace MShop.E2ETest.API.Address
                 State = "ST",
                 PostalCode = "00000-000",
                 Country = "Brasil",
-                CustomerId = customerId
             };
 
             /*var updateDto = new MShop.Application.Dtos.UpdateCustomerAddressDto
@@ -43,7 +42,7 @@ namespace MShop.E2ETest.API.Address
                 CustomerId = customerId,
                 Address = addressDto
             };*/
-            return new AddAddressCommand(addressDto);
+            return new AddAddressCommand(addressDto, customerId);
         }
 
         public void DetachedEntity(Entity entity)
