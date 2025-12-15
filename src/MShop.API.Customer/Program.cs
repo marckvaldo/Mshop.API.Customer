@@ -18,6 +18,7 @@ builder.Services.AddConfigurationController()
     .AddDataBaseAndRepository(builder.Configuration)
     //.AddCacheAndDistributedLock(builder.Configuration)
     .AddKeycloakServices(builder.Configuration)
+    .AddCacheAndDistributedLock(builder.Configuration)
     .AddConfigurationHealthChecks()
     .AddHandlers();
 
