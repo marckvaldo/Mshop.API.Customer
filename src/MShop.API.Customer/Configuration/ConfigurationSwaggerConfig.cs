@@ -72,6 +72,30 @@ namespace MShop.API.Customer.Configuration
             foreach (var description in _apiVersionDescriptionProvider.ApiVersionDescriptions)
             {
                 options.SwaggerDoc(description.GroupName, CreateOpenApiInfo(description));
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please enter a vilid Token",
+                    Name = "Autorization",
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    Scheme = "Bearer"
+                });
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[]{}
+                    }
+                });
             }
         }
 

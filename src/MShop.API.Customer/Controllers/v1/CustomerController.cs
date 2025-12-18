@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MShop.Application.Commands;
 using MShop.Application.Dtos;
@@ -13,6 +14,7 @@ namespace MShop.API.Customer.Controllers.v1
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [Authorize]
     public class CustomerController : MainController
     {
         private readonly IMediator _mediator;
@@ -21,11 +23,11 @@ namespace MShop.API.Customer.Controllers.v1
             _mediator = mediator;
         }
 
+        [Authorize(Policy = "CustomerRed")]
         [HttpGet("{id:guid}")]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-
         public async Task<ActionResult<CustomerResultDto>> Customer(Guid id, CancellationToken cancellation)
         {
             var result = await _mediator.Send(new GetCustomerByIdQuery(id));
@@ -33,6 +35,8 @@ namespace MShop.API.Customer.Controllers.v1
             return CustomResponse(result.Data);
         }
 
+
+        [Authorize(Policy = "CustomerRed")]
         [HttpGet("email/{email}")]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -44,11 +48,12 @@ namespace MShop.API.Customer.Controllers.v1
             return CustomResponse(result.Data);
         }
 
+
+        [Authorize(Policy = "CustomerRed")]
         [HttpGet("name/{name}")]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-
         public async Task<ActionResult<CustomerResultDto>> CustomerByName(string name, CancellationToken cancellation)
         {
             var result = await _mediator.Send(new GetCustomerByNameQuery(name));
@@ -56,10 +61,11 @@ namespace MShop.API.Customer.Controllers.v1
             return CustomResponse(result.Data);
         }
 
+
+        [AllowAnonymous]
         [HttpPost]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
         public async Task<ActionResult<bool>> CreateCustomer([FromBody] CreateCustomerCommand command, CancellationToken cancellation)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
@@ -69,6 +75,7 @@ namespace MShop.API.Customer.Controllers.v1
             return CustomResponse(result);
         }
 
+        [Authorize(Policy = "CustomerUpdate")]
         [HttpPut("{id:guid}")]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -84,7 +91,6 @@ namespace MShop.API.Customer.Controllers.v1
             var result = await _mediator.Send(command, cancellation);
             return CustomResponse(result);
         }
-
 
     }
 }

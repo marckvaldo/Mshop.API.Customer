@@ -20,7 +20,8 @@ builder.Services.AddConfigurationController()
     .AddKeycloakServices(builder.Configuration)
     .AddCacheAndDistributedLock(builder.Configuration)
     .AddConfigurationHealthChecks()
-    .AddHandlers();
+    .AddHandlers()
+    .AddSecurity(builder.Configuration);
 
 var app = builder.Build();
 
@@ -30,7 +31,7 @@ app.UseDocumentation();
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

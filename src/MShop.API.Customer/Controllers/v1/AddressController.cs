@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MShop.Application.Commands;
 using MShop.Application.Dtos;
@@ -11,6 +12,7 @@ namespace MShop.API.Customer.Controllers.v1
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [Authorize]
     public class AddressController : MainController
     {
         private readonly IMediator _mediator;
@@ -19,6 +21,7 @@ namespace MShop.API.Customer.Controllers.v1
             _mediator = mediator;
         }
 
+        [Authorize(Policy = "AddressCreate")]
         [HttpPost]
         [ProducesResponseType(typeof(bool), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -31,6 +34,7 @@ namespace MShop.API.Customer.Controllers.v1
             return CustomResponse(result);
         }
 
+        [Authorize(Policy = "AddressDelete")]
         [HttpDelete("{id:guid}")]
         [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -45,6 +49,7 @@ namespace MShop.API.Customer.Controllers.v1
         }
 
 
+        [Authorize(Policy = "AddressRead")]
         [HttpGet("customer/{id:guid}")]
         [ProducesResponseType(typeof(AddressResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -60,6 +65,7 @@ namespace MShop.API.Customer.Controllers.v1
         }
 
 
+        [Authorize(Policy = "AddressRead")]
         [HttpGet("{id:guid}")]
         [ProducesResponseType(typeof(AddressResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -20,7 +20,7 @@ namespace MShop.Infra.Keycloak.Services
             _settings = settings;;
         }
 
-        public async Task<string?> CreateUserAsync( RequestUsers request, CancellationToken cancellationToken)
+        public async Task<string?> CreateUserAsync(RequestUsers request, CancellationToken cancellationToken)
         {
             var url = $"/admin/realms/{_settings.Realm}/users";
 
@@ -30,7 +30,7 @@ namespace MShop.Infra.Keycloak.Services
                 email = request.email,
                 enabled = true,
                 firstName = request.name,
-                emailVerified = false,
+                emailVerified = true,
                 attributes = new
                 {
                     phone = new[] { request.phone }
