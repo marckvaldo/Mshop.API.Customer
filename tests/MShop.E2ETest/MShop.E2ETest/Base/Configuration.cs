@@ -14,5 +14,9 @@ namespace MShop.E2ETest.Base
         public static bool DATABASE_MEMORY = false;
 
         public static string URI_GRAPHQL = "https://localhost:7210/graphql";
+
+        public const string USER_CUSTOMER_AUTH = "dev";
+        public const string PASSWORD_CUSTOMER_AUTH = "123456";
+        public const string CLIENT_ID_AUTH = "web-app";
     }
 }

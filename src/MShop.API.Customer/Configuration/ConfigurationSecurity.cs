@@ -1,17 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.IdentityModel.Tokens;
 using MShop.API.Customer.Extension;
-using Polly;
 
 namespace MShop.API.Customer.Configuration
 {
-    public static class SecurityConfiguration
+    public static class ConfigurationSecurity
     {
         public static IServiceCollection AddSecurity(this IServiceCollection services, IConfiguration configuration)
         {
-
-
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -37,27 +33,26 @@ namespace MShop.API.Customer.Configuration
                         NameClaimType = "preferred_username"
                     };
                 });
-
             
             services.AddAuthorization(opt =>
             {
-                opt.AddPolicy("CustomerRed", policy => 
+                opt.AddPolicy(Policies.CustomerRed, policy => 
                     policy.RequireAssertion(context => 
                         context.User.HasResourceRole("api-customer", "customer:read")));
 
-                opt.AddPolicy("CustomerUpdate", policy =>
+                opt.AddPolicy(Policies.CustomerUpdate, policy =>
                     policy.RequireAssertion(context =>
                         context.User.HasResourceRole("api-customer", "customer:update")));
 
-                opt.AddPolicy("AddressRead", policy =>
+                opt.AddPolicy(Policies.AddressRead, policy =>
                     policy.RequireAssertion(context =>
                         context.User.HasResourceRole("api-customer", "customer:address:read")));
 
-                opt.AddPolicy("AddressCreate", policy =>
+                opt.AddPolicy(Policies.AddressCreate, policy =>
                     policy.RequireAssertion(context =>
                         context.User.HasResourceRole("api-customer", "customer:address:create")));
 
-                opt.AddPolicy("AddressDelete", policy =>
+                opt.AddPolicy(Policies.AddressDelete, policy =>
                     policy.RequireAssertion(context =>
                         context.User.HasResourceRole("api-customer", "customer:address:delete")));
 

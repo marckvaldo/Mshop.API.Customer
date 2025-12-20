@@ -1,3 +1,4 @@
+using MShop.API.GraphQL.Configuration;
 using MShop.API.GraphQL.GraphQL.Address;
 using MShop.API.GraphQL.GraphQL.Customer;
 using MShop.Application;
@@ -8,12 +9,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();  
+builder.Services.AddControllers();
 
 builder.Services.AddDataBaseAndRepository(builder.Configuration)
     .AddKeycloakServices(builder.Configuration)
+    .AddCacheAndDistributedLock(builder.Configuration)
     .AddHandlers()
+    .AddSecurity(builder.Configuration)
     .AddGraphQLServer()
+    .AddAuthorization()
+    //.AddAuthorizationCore()
+    //.AddAuthorizationCore()
+    //.AddAuthorizationHandler<HotChocolate.Authorization.IAuthorizationHandler>()
     .AddQueryType()
     .AddTypeExtension<CustomerQueries>()
     .AddTypeExtension<AddressQueries>();
@@ -26,7 +33,7 @@ app.AddMigrateDatabase();
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapGraphQL();

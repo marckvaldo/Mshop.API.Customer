@@ -1,12 +1,16 @@
-﻿using MediatR;
+﻿using HotChocolate.Authorization;
+using MediatR;
+using MShop.API.Customer.Extension;
 using MShop.Application.Queries;
 using Notification = MShop.Core.Message;
 
 namespace MShop.API.GraphQL.GraphQL.Customer
 {
+    [Authorize]
     [ExtendObjectType(OperationTypeNames.Query)]
     public class CustomerQueries : BaseGraphQL
     {
+        [Authorize(Policy = Policies.CustomerRed)]
         public async Task<CustomerPayload> GetCustomerById(
             [Service] IMediator mediator,
             [Service] Notification.INotification notification,
@@ -37,7 +41,7 @@ namespace MShop.API.GraphQL.GraphQL.Customer
             return result;
         }
 
-
+        [Authorize(Policy = Policies.CustomerRed)]
         public async Task<CustomerPayload> GetCustomerByName(
             [Service] IMediator mediator,
             [Service] Notification.INotification notification,
@@ -68,6 +72,7 @@ namespace MShop.API.GraphQL.GraphQL.Customer
         }
 
 
+        [Authorize(Policy = Policies.CustomerRed)]
         public async Task<CustomerPayload> GetCustomerByEmail(
             [Service] IMediator mediator,
             [Service] Notification.INotification notification,

@@ -104,7 +104,7 @@ namespace MShop.Application.Commands.Handlers
                     await _customerRepository.Create(customer, cancellationToken);
                     await _unitOfWork.CommitAsync(cancellationToken);
 
-                    await _identityProviderService.SendEmailVerifyAsync(resulUserId, cancellationToken);
+                    //await _identityProviderService.SendEmailVerifyAsync(resulUserId, cancellationToken);
 
                     return true;
                 }

@@ -1,12 +1,16 @@
-﻿using MediatR;
+﻿using HotChocolate.Authorization;
+using MediatR;
+using MShop.API.Customer.Extension;
 using MShop.Application.Queries;
 using Notification = MShop.Core.Message;
 
 namespace MShop.API.GraphQL.GraphQL.Address
 {
+    [Authorize]
     [ExtendObjectType(OperationTypeNames.Query)]
     public class AddressQueries : BaseGraphQL
     {
+        [Authorize(Policy = Policies.AddressRead)]
         public async Task<AddressPayload> GetAddressById(
             [Service] IMediator mediator,
             [Service] Notification.INotification notification,

@@ -134,11 +134,6 @@ namespace MShop.E2ETest.API.Address
             }
         }
 
-
-
-
-
-
         private async Task<Domain.Entities.Customer> CriarCustomer()
         {
             var customer = _customerFaker.Generate();

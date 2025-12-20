@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MShop.API.Customer.Extension;
 using MShop.Application.Commands;
 using MShop.Application.Dtos;
 using MShop.Application.Queries;
@@ -14,7 +15,7 @@ namespace MShop.API.Customer.Controllers.v1
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [Authorize]
+    /*[Authorize]*/
     public class CustomerController : MainController
     {
         private readonly IMediator _mediator;
@@ -23,7 +24,7 @@ namespace MShop.API.Customer.Controllers.v1
             _mediator = mediator;
         }
 
-        [Authorize(Policy = "CustomerRed")]
+        [Authorize(Policy = Policies.CustomerRed)]
         [HttpGet("{id:guid}")]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -36,7 +37,7 @@ namespace MShop.API.Customer.Controllers.v1
         }
 
 
-        [Authorize(Policy = "CustomerRed")]
+        [Authorize(Policy = Policies.CustomerRed)]
         [HttpGet("email/{email}")]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -49,7 +50,7 @@ namespace MShop.API.Customer.Controllers.v1
         }
 
 
-        [Authorize(Policy = "CustomerRed")]
+        [Authorize(Policy = Policies.CustomerRed)]
         [HttpGet("name/{name}")]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -75,7 +76,7 @@ namespace MShop.API.Customer.Controllers.v1
             return CustomResponse(result);
         }
 
-        [Authorize(Policy = "CustomerUpdate")]
+        [Authorize(Policy = Policies.CustomerUpdate)]
         [HttpPut("{id:guid}")]
         [ProducesResponseType(typeof(CustomerResultDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

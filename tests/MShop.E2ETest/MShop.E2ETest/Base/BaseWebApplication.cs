@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MShop.E2ETest.Base.Clients;
 using MShop.E2ETest.Base.FactoriesApplication;
+using MShop.Infra.Keycloak.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,8 @@ namespace MShop.E2ETest.Base
             _webAPI = new CustomerWebApplicationFactory<MShop.API.Customer.Program>();
             _serviceProvider = _webAPI.Services.GetRequiredService<IServiceProvider>();
             _httpClient = _webAPI.CreateClient();
-            _apiClient = new APIClient(_httpClient);
+            var settingsKeycloak = _webAPI.Services.GetRequiredService<KeycloakSettings>();
+            _apiClient = new APIClient(_httpClient, settingsKeycloak);
 
         }
 
@@ -42,7 +44,8 @@ namespace MShop.E2ETest.Base
             _GraphQL = new CustomerWebApplicationFactory<MShop.API.GraphQL.Program>();
             _serviceProvider = _GraphQL.Services.GetRequiredService<IServiceProvider>();
             _httpClient = _GraphQL.CreateClient();
-            _apiClientGraphQL = new GraphQLClient(_httpClient);
+            var settingsKeycloak = _GraphQL.Services.GetRequiredService<KeycloakSettings>();
+            _apiClientGraphQL = new GraphQLClient(_httpClient, settingsKeycloak);
 
         }
     }
