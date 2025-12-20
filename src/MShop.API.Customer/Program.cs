@@ -1,22 +1,25 @@
+using Mshop.API.Customer.Middlewares;
 using MShop.API.Customer.Configuration;
+using MShop.API.Customer.Middlewares.Observability;
 using MShop.Application;
 using MShop.Infra.Data;
 using MShop.Infra.Keycloak;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.UseDefaultServiceProvider(options =>
+/*builder.Host.UseDefaultServiceProvider(options =>
 {
     options.ValidateScopes = builder.Environment.IsDevelopment();
     options.ValidateOnBuild = builder.Environment.IsDevelopment();
-});
+});*/
+
+builder.AddConfigurationLogs(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddConfigurationController()
     .AddConfigurationSwagger()
     .AddConfigurationModelState()
     .AddDataBaseAndRepository(builder.Configuration)
-    //.AddCacheAndDistributedLock(builder.Configuration)
     .AddKeycloakServices(builder.Configuration)
     .AddCacheAndDistributedLock(builder.Configuration)
     .AddConfigurationHealthChecks()
@@ -24,6 +27,10 @@ builder.Services.AddConfigurationController()
     .AddSecurity(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<LoggingMiddleware>();
+
 
 app.AddMigrateDatabase();
 app.UseDocumentation();
