@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using OpenTelemetry.Trace;
+using System.Diagnostics;
+using System.Net;
 using System.Text.Json;
 
 namespace Mshop.API.Customer.Middlewares
@@ -27,12 +29,15 @@ namespace Mshop.API.Customer.Middlewares
             }
             catch (Exception ex)
             {
-                var correlationId = context.Items["CorrelationId"]?.ToString()
-                            ?? context.TraceIdentifier;
+                //isso serve para propagar o erro no opentelemetry
+                Activity.Current?.RecordException(ex);
+                Activity.Current?.SetStatus(ActivityStatusCode.Error);
+
+                var traceId = Activity.Current?.TraceId.ToString();
 
                 _logger.LogError(ex,
                    "Erro não tratado | CorrelationId: {CorrelationId} | Path: {Path} | Method: {Method}",
-                   correlationId,
+                   traceId,
                    context.Request.Path,
                    context.Request.Method);
 
@@ -42,8 +47,10 @@ namespace Mshop.API.Customer.Middlewares
                 var response = new
                 {
                     success = false,
-                    traceId = context.TraceIdentifier,
-                    errors = new[] { "Erro interno do servidor" }
+                    traceId,
+                    errors = _env.IsDevelopment()
+                        ? new[] { ex.Message }
+                        : new[] { "Erro interno do servidor" }
                 };
 
                 await context.Response.WriteAsync(JsonSerializer.Serialize(response));

@@ -4,6 +4,7 @@ using MShop.API.Customer.Middlewares.Observability;
 using MShop.Application;
 using MShop.Infra.Data;
 using MShop.Infra.Keycloak;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,9 +29,14 @@ builder.Services.AddConfigurationController()
 
 var app = builder.Build();
 
+//app.UseMiddleware<RequestContextMiddleware>();
 app.UseMiddleware<ExceptionMiddleware>();
-app.UseMiddleware<LoggingMiddleware>();
 
+app.UseSerilogRequestLogging(options =>
+{
+    options.MessageTemplate =
+        "HTTP {RequestMethod} {RequestPath} => {StatusCode} em {Elapsed:0.0000} ms";
+});
 
 app.AddMigrateDatabase();
 app.UseDocumentation();
